@@ -1,6 +1,6 @@
 /**
  * SHOWCASE LIGHTBOX MODULE (LS TECNOLOGIA & GESTÃO)
- * Gerencia a ampliação modal de telas e mockups do sistema.
+ * Gerencia a ampliação modal de telas e mockups do sistema com acessibilidade e trap de foco.
  */
 export function initShowcaseLightbox() {
   const modal = document.getElementById('showcase-lightbox-modal');
@@ -11,13 +11,19 @@ export function initShowcaseLightbox() {
 
   if (!modal || !modalImg) return;
 
-  function openLightbox(src, title) {
+  let lastActiveElement = null;
+
+  function openLightbox(src, title, triggerElement) {
+    lastActiveElement = triggerElement || document.activeElement;
     modalImg.src = src;
-    modalCaption.textContent = title || 'Visualização do Sistema';
+    const resolvedTitle = title || 'Visualização do Sistema';
+    modalImg.alt = resolvedTitle;
+    modalCaption.textContent = resolvedTitle;
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     setTimeout(() => {
       modal.classList.remove('opacity-0');
+      if (closeBtn) closeBtn.focus();
     }, 10);
     document.body.style.overflow = 'hidden';
   }
@@ -28,7 +34,11 @@ export function initShowcaseLightbox() {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
       modalImg.src = '';
+      modalImg.alt = '';
       document.body.style.overflow = '';
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
     }, 200);
   }
 
@@ -37,7 +47,7 @@ export function initShowcaseLightbox() {
       e.preventDefault();
       const src = trigger.getAttribute('data-lightbox-src');
       const title = trigger.getAttribute('data-lightbox-title');
-      if (src) openLightbox(src, title);
+      if (src) openLightbox(src, title, trigger);
     });
   });
 
@@ -50,8 +60,33 @@ export function initShowcaseLightbox() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    if (modal.classList.contains('hidden')) return;
+
+    if (e.key === 'Escape') {
       closeLightbox();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableElements = modal.querySelectorAll(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
     }
   });
 }
