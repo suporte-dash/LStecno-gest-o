@@ -330,14 +330,14 @@
 /* ========================================================== */
 /* FORA DO LAYER (Sobrescrevem utilitários com especificidade) */
 /* ========================================================== */
-.reveal-fade-up {
+.js .reveal-fade-up {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal-fade-up.is-revealed {
+.js .reveal-fade-up.is-revealed {
   opacity: 1;
   transform: translateY(0);
 }
@@ -355,3 +355,9 @@
   padding-bottom: 1rem;
   border-top-width: 1px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .reveal-fade-up { opacity: 1; transform: none; }
+}
+@media (pointer: coarse) { #hero-cursor-field-host { display: none; } }

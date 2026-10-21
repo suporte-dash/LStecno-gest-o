@@ -432,7 +432,11 @@ export function setupConversionTracking() {
   setupInteractiveSimulator();
 
   // 11. Inicializa o campo de partículas interativo no Hero
-  initHeroCursorField();
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isPointerCoarse = window.matchMedia('(pointer: coarse)').matches;
+  if (!prefersReducedMotion && !isPointerCoarse) {
+    initHeroCursorField();
+  }
 }
 
 // Inicia imediatamente quando o DOM estiver pronto

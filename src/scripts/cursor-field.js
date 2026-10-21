@@ -453,8 +453,8 @@ export function initHeroCursorField() {
 
   if (!canvas || !host) return;
 
-  // Acessibilidade: se o usuário prefere movimentos reduzidos, não inicializa a simulação
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  // Acessibilidade e Performance: se o usuário prefere movimentos reduzidos ou dispositivo touch, não inicializa a simulação
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || window.matchMedia("(pointer: coarse)").matches) {
     host.style.display = "none";
     return;
   }
