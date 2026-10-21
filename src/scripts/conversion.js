@@ -1,4 +1,5 @@
 import { initHeroCursorField } from './cursor-field.js';
+import { initShowcaseLightbox } from './lightbox.js';
 
 // ================================================================
 // CONFIGURAÇÃO CENTRAL & ENGENHARIA DE CONVERSÃO - LS TECNOLOGIA
@@ -437,6 +438,9 @@ export function setupConversionTracking() {
   if (!prefersReducedMotion && !isPointerCoarse) {
     initHeroCursorField();
   }
+
+  // 12. Inicializa o modal lightbox de ampliação de showcases
+  initShowcaseLightbox();
 }
 
 // Inicia imediatamente quando o DOM estiver pronto
