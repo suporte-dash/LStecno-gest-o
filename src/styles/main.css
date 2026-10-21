@@ -180,6 +180,37 @@
   }
 }
 
+@keyframes floatIsometric {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+@keyframes badge-pulse-subtle-1 {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes badge-pulse-subtle-2 {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
 /* ========================================================== */
 /* LAYER COMPONENTS: Permite que utilitários Tailwind vençam  */
 /* ========================================================== */
@@ -328,6 +359,27 @@
 
   .animate-float-badge-3 {
     animation: float-badge-right 4.2s ease-in-out infinite;
+  }
+
+  /* 4.1 LEVITAÇÃO ISOMÉTRICA & HOVER SPOTLIGHT (VENDA+) */
+  .venda-plus-asset {
+    animation: floatIsometric 4.5s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
+    image-rendering: -webkit-optimize-contrast;
+    transition: filter 0.4s ease;
+  }
+
+  .venda-plus-container:hover .venda-plus-asset {
+    filter: drop-shadow(0 15px 35px rgba(0, 229, 255, 0.2)) drop-shadow(0 0 20px rgba(245, 183, 0, 0.25));
+  }
+
+  .animate-badge-pulse-1 {
+    animation: badge-pulse-subtle-1 3.2s ease-in-out infinite;
+  }
+
+  .animate-badge-pulse-2 {
+    animation: badge-pulse-subtle-2 3.8s ease-in-out infinite 0.6s;
   }
 
   /* 5. FAQ ACCORDION TRANSITIONS */
