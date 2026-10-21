@@ -273,14 +273,17 @@ export function setupConversionTracking() {
       const isOpen = !mobileMenu.classList.contains('hidden');
       if (isOpen) {
         mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
       } else {
         mobileMenu.classList.remove('hidden');
+        menuToggle.setAttribute('aria-expanded', 'true');
       }
     });
 
     mobileMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
@@ -397,13 +400,19 @@ export function setupConversionTracking() {
         faqItems.forEach((other) => {
           if (other !== item) {
             other.classList.remove('is-open');
+            const otherHeader = other.querySelector('.faq-header');
+            if (otherHeader) {
+              otherHeader.setAttribute('aria-expanded', 'false');
+            }
           }
         });
 
         if (isOpen) {
           item.classList.remove('is-open');
+          header.setAttribute('aria-expanded', 'false');
         } else {
           item.classList.add('is-open');
+          header.setAttribute('aria-expanded', 'true');
         }
       });
     }

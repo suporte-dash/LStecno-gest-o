@@ -76,7 +76,7 @@
         </a>
 
         <!-- Mobile Menu Hamburger Button -->
-        <button id="mobile-menu-toggle" aria-label="Abrir Menu de Navegação" class="xl:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-surface-container text-on-surface hover:text-primary hover:bg-surface-container-high transition-colors focus:outline-none">
+        <button id="mobile-menu-toggle" aria-label="Abrir Menu de Navegação" aria-expanded="false" aria-controls="mobile-menu-drawer" class="xl:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-surface-container text-on-surface hover:text-primary hover:bg-surface-container-high transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
           <span class="material-symbols-outlined text-[26px]">menu</span>
         </button>
       </div>
@@ -1235,11 +1235,11 @@
           <div class="flex flex-col gap-space-sm">
             
             <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant/30 overflow-hidden is-open">
-              <button type="button" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus:outline-none">
+              <button type="button" aria-expanded="true" aria-controls="faq-answer-1" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                 <span class="font-semibold">Preciso de um computador caro ou potente para rodar os sistemas?</span>
                 <span class="faq-chevron material-symbols-outlined text-primary text-[24px]">expand_more</span>
               </button>
-              <div class="faq-answer">
+              <div id="faq-answer-1" class="faq-answer">
                 <div class="faq-answer-inner px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md border-t border-surface-variant/20 pt-space-sm">
                   Não! Nossos softwares são otimizados e operam diretamente na nuvem. Você pode usar computadores convencionais, notebooks básicos, tablets ou celulares com qualquer navegador moderno.
                 </div>
@@ -1247,11 +1247,11 @@
             </div>
 
             <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant/30 overflow-hidden">
-              <button type="button" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus:outline-none">
+              <button type="button" aria-expanded="false" aria-controls="faq-answer-2" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                 <span class="font-semibold">Existe período de fidelidade ou multa rescisória?</span>
                 <span class="faq-chevron material-symbols-outlined text-primary text-[24px]">expand_more</span>
               </button>
-              <div class="faq-answer">
+              <div id="faq-answer-2" class="faq-answer">
                 <div class="faq-answer-inner px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md border-t border-surface-variant/20 pt-space-sm">
                   Nossos planos operam em modalidade mensal contínua sem contratos de aprisionamento abusivos. Você permanece conosco pela qualidade e resultados obtidos no seu negócio.
                 </div>
@@ -1259,11 +1259,11 @@
             </div>
 
             <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant/30 overflow-hidden">
-              <button type="button" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus:outline-none">
+              <button type="button" aria-expanded="false" aria-controls="faq-answer-3" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                 <span class="font-semibold">Como funciona o treinamento da minha equipe de caixas e atendentes?</span>
                 <span class="faq-chevron material-symbols-outlined text-primary text-[24px]">expand_more</span>
               </button>
-              <div class="faq-answer">
+              <div id="faq-answer-3" class="faq-answer">
                 <div class="faq-answer-inner px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md border-t border-surface-variant/20 pt-space-sm">
                   Nossa equipe realiza o processo de ativação guiada e disponibiliza vídeos tutoriais rápidos e diretos ao ponto. Além disso, temos canal direto de suporte para sanar qualquer dúvida durante a operação diária.
                 </div>
@@ -1271,11 +1271,11 @@
             </div>
 
             <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant/30 overflow-hidden">
-              <button type="button" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus:outline-none">
+              <button type="button" aria-expanded="false" aria-controls="faq-answer-4" class="faq-header w-full flex items-center justify-between p-space-md text-left font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                 <span class="font-semibold">Consigo emitir cupom fiscal NFC-e e integrar com maquininhas de cartão?</span>
                 <span class="faq-chevron material-symbols-outlined text-primary text-[24px]">expand_more</span>
               </button>
-              <div class="faq-answer">
+              <div id="faq-answer-4" class="faq-answer">
                 <div class="faq-answer-inner px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md border-t border-surface-variant/20 pt-space-sm">
                   Sim! O Venda+ possui emissão fiscal de Cupom NFC-e totalmente integrada e homologada, com compatibilidade com módulos de TEF POS e PDV móvel para recebimentos rápidos no balcão ou nas mesas.
                 </div>
