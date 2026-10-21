@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-floor: #070b14;
+  --color-surface: #0f131d;
+  --color-surface-dim: #070b14;
+  --color-surface-bright: #353944;
+  --color-surface-container-lowest: #070b14;
+  --color-surface-container-low: #171c25;
+  --color-surface-container: #1b2029;
+  --color-surface-container-high: #262a34;
+  --color-surface-container-highest: #31353f;
+  
+  --color-on-surface: #dfe2f0;
+  --color-on-surface-variant: #d4c5ac;
+  --color-inverse-surface: #dfe2f0;
+  --color-inverse-on-surface: #2c303b;
+  --color-outline: #9c8f78;
+  --color-outline-variant: #504532;
+  --color-surface-tint: #f5b700;
+
+  /* Dourado Metálico Cyber */
+  --color-primary: #ffd033;
+  --color-primary-container: #f5b700;
+  --color-on-primary: #070b14;
+  --color-on-primary-container: #070b14;
+  --color-primary-fixed: #ffdea0;
+  --color-primary-fixed-dim: #f5b700;
+
+  /* Ciano / Neon Tecnológico */
+  --color-secondary: #00e5ff;
+  --color-secondary-container: #00d2ff;
+  --color-on-secondary: #003543;
+  --color-on-secondary-container: #00566a;
+  --color-secondary-fixed: #b6ebff;
+  --color-secondary-fixed-dim: #47d6ff;
+
+  /* Verde WhatsApp Conversão */
+  --color-tertiary: #25d366;
+  --color-tertiary-container: #34dc6e;
+  --color-on-tertiary: #003915;
+
+  --color-background: #070b14;
+  --color-on-background: #dfe2f0;
+  --color-surface-variant: #171c25;
+
+  --font-display-lg: "Montserrat", sans-serif;
+  --font-display-lg-mobile: "Montserrat", sans-serif;
+  --font-headline-xl: "Montserrat", sans-serif;
+  --font-headline-xl-mobile: "Montserrat", sans-serif;
+  --font-headline-lg: "Montserrat", sans-serif;
+  --font-headline-md: "Montserrat", sans-serif;
+  --font-title-sm: "Montserrat", sans-serif;
+  --font-body-lg: "Montserrat", "Inter", sans-serif;
+  --font-body-md: "Montserrat", "Inter", sans-serif;
+  --font-body-sm: "Montserrat", "Inter", sans-serif;
+  --font-label-md: "Montserrat", sans-serif;
+  --font-label-sm: "Montserrat", sans-serif;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-margin: 2rem;
+  --spacing-margin-mobile: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #070b14;
+  }
+  body {
+    background-color: #070b14;
+    overscroll-behavior-y: none;
+    font-family: var(--font-body-md);
+  }
+}
+
+/* ========================================================== */
+/* 1. CARD SPOTLIGHT & RADIAL GLOW                           */
+/* ========================================================== */
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+  background-color: #0f131d;
+  transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.45), rgba(0, 229, 255, 0.2) 40%, transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.spotlight-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.07), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:hover::after {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(245, 183, 0, 0.15);
+}
+
+/* ========================================================== */
+/* 2. SHIMMER METÁLICO NOS BOTÕES PRINCIPAIS (CTA GLOW)      */
+/* ========================================================== */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmer-sweep 5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+@keyframes shimmer-sweep {
+  0%, 75% {
+    left: -120%;
+  }
+  100% {
+    left: 220%;
+  }
+}
+
+.btn-shimmer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 28px rgba(245, 183, 0, 0.55), 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================================== */
+/* 3. BORDA ILUMINADA NO COMBO ESPECIAL (BORDER BEAM)        */
+/* ========================================================== */
+.border-beam-card {
+  position: relative;
+  isolation: isolate;
+  border-radius: 1.5rem;
+  background-color: #0f131d;
+  overflow: hidden;
+}
+
+.border-beam-card::before {
+  content: '';
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 280deg,
+    #00e5ff 320deg,
+    #f5b700 350deg,
+    transparent 360deg
+  );
+  animation: border-beam-spin 4s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.border-beam-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  background-color: rgba(15, 19, 29, 0.96);
+  backdrop-filter: blur(20px);
+  margin: 1.5px;
+}
+
+@keyframes border-beam-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================================== */
+/* 4. MICRO-MOVIMENTO NO HERO (TILT 3D E FLUTUAÇÃO DE BADGES) */
+/* ========================================================== */
+.hero-tilt-container {
+  perspective: 1200px;
+}
+
+.hero-tilt-card {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@keyframes float-gentle-1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes float-gentle-2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-float-badge-1 {
+  animation: float-gentle-1 3.5s ease-in-out infinite;
+}
+
+.animate-float-badge-2 {
+  animation: float-gentle-2 4s ease-in-out infinite 0.5s;
+}
+
+.animate-float-badge-3 {
+  animation: float-gentle-1 3.8s ease-in-out infinite 1.2s;
+}
+
+/* ========================================================== */
+/* 5. SCROLL REVEAL                                          */
+/* ========================================================== */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================================== */
+/* 6. FAQ ACCORDION TRANSITIONS                              */
+/* ========================================================== */
+.faq-item {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-chevron {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Outros efeitos */
+.glow-gold {
+  box-shadow: 0 0 25px rgba(245, 183, 0, 0.35);
+}
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+}
+.glow-whatsapp {
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.45);
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.radar-badge {
+  animation: radar-pulse 2s infinite;
+}
