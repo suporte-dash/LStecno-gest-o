@@ -99,80 +99,8 @@
 }
 
 /* ========================================================== */
-/* 1. CARD SPOTLIGHT & RADIAL GLOW                           */
+/* KEYFRAMES GLOBAIS                                          */
 /* ========================================================== */
-.spotlight-card {
-  position: relative;
-  isolation: isolate;
-  background-color: #0f131d;
-  transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-}
-
-.spotlight-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.45), rgba(0, 229, 255, 0.2) 40%, transparent 70%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-
-.spotlight-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.07), transparent 60%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.spotlight-card:hover::before,
-.spotlight-card:hover::after {
-  opacity: 1;
-}
-
-.spotlight-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(245, 183, 0, 0.15);
-}
-
-/* ========================================================== */
-/* 2. SHIMMER METÁLICO NOS BOTÕES PRINCIPAIS (CTA GLOW)      */
-/* ========================================================== */
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-}
-
-.btn-shimmer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.45) 50%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  animation: shimmer-sweep 5s infinite cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-}
-
 @keyframes shimmer-sweep {
   0%, 75% {
     left: -120%;
@@ -182,48 +110,6 @@
   }
 }
 
-.btn-shimmer:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 28px rgba(245, 183, 0, 0.55), 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-/* ========================================================== */
-/* 3. BORDA ILUMINADA NO COMBO ESPECIAL (BORDER BEAM)        */
-/* ========================================================== */
-.border-beam-card {
-  position: relative;
-  isolation: isolate;
-  border-radius: 1.5rem;
-  background-color: #0f131d;
-  overflow: hidden;
-}
-
-.border-beam-card::before {
-  content: '';
-  position: absolute;
-  inset: -150%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 280deg,
-    #00e5ff 320deg,
-    #f5b700 350deg,
-    transparent 360deg
-  );
-  animation: border-beam-spin 4s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.border-beam-inner {
-  position: relative;
-  z-index: 1;
-  border-radius: inherit;
-  background-color: rgba(15, 19, 29, 0.96);
-  backdrop-filter: blur(20px);
-  margin: 1.5px;
-}
-
 @keyframes border-beam-spin {
   from {
     transform: rotate(0deg);
@@ -231,19 +117,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-/* ========================================================== */
-/* 4. MICRO-MOVIMENTO NO HERO (TILT 3D E FLUTUAÇÃO DE BADGES) */
-/* ========================================================== */
-.hero-tilt-container {
-  perspective: 1200px;
-}
-
-.hero-tilt-card {
-  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
-  transform-style: preserve-3d;
-  will-change: transform;
 }
 
 @keyframes float-gentle-1 {
@@ -264,73 +137,6 @@
   }
 }
 
-.animate-float-badge-1 {
-  animation: float-gentle-1 3.5s ease-in-out infinite;
-}
-
-.animate-float-badge-2 {
-  animation: float-gentle-2 4s ease-in-out infinite 0.5s;
-}
-
-.animate-float-badge-3 {
-  animation: float-gentle-1 3.8s ease-in-out infinite 1.2s;
-}
-
-/* ========================================================== */
-/* 5. SCROLL REVEAL                                          */
-/* ========================================================== */
-.reveal-fade-up {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-fade-up.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========================================================== */
-/* 6. FAQ ACCORDION TRANSITIONS                              */
-/* ========================================================== */
-.faq-item {
-  transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-
-.faq-answer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.faq-item.is-open .faq-answer {
-  grid-template-rows: 1fr;
-}
-
-.faq-answer-inner {
-  overflow: hidden;
-}
-
-.faq-chevron {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.faq-item.is-open .faq-chevron {
-  transform: rotate(180deg);
-}
-
-/* Outros efeitos */
-.glow-gold {
-  box-shadow: 0 0 25px rgba(245, 183, 0, 0.35);
-}
-.glow-cyan {
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
-}
-.glow-whatsapp {
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.45);
-}
-
 @keyframes radar-pulse {
   0% {
     transform: scale(0.95);
@@ -346,6 +152,195 @@
   }
 }
 
-.radar-badge {
-  animation: radar-pulse 2s infinite;
+/* ========================================================== */
+/* LAYER COMPONENTS: Permite que utilitários Tailwind vençam  */
+/* ========================================================== */
+@layer components {
+  /* 1. CARD SPOTLIGHT & RADIAL GLOW */
+  .spotlight-card {
+    position: relative;
+    isolation: isolate;
+    transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  }
+
+  .spotlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.45), rgba(0, 229, 255, 0.2) 40%, transparent 70%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .spotlight-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.07), transparent 60%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  .spotlight-card:hover::before,
+  .spotlight-card:hover::after {
+    opacity: 1;
+  }
+
+  .spotlight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(245, 183, 0, 0.15);
+  }
+
+  /* 2. SHIMMER METÁLICO NOS BOTÕES PRINCIPAIS */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  }
+
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 100%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer-sweep 5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .btn-shimmer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 28px rgba(245, 183, 0, 0.55), 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  /* 3. BORDA ILUMINADA NO COMBO ESPECIAL */
+  .border-beam-card {
+    position: relative;
+    isolation: isolate;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+
+  .border-beam-card::before {
+    content: '';
+    position: absolute;
+    inset: -150%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 280deg,
+      #00e5ff 320deg,
+      #f5b700 350deg,
+      transparent 360deg
+    );
+    animation: border-beam-spin 4s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .border-beam-inner {
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    background-color: rgba(15, 19, 29, 0.96);
+    backdrop-filter: blur(20px);
+    margin: 1.5px;
+  }
+
+  /* 4. MICRO-MOVIMENTO NO HERO */
+  .hero-tilt-container {
+    perspective: 1200px;
+  }
+
+  .hero-tilt-card {
+    transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .animate-float-badge-1 {
+    animation: float-gentle-1 3.5s ease-in-out infinite;
+  }
+
+  .animate-float-badge-2 {
+    animation: float-gentle-2 4s ease-in-out infinite 0.5s;
+  }
+
+  .animate-float-badge-3 {
+    animation: float-gentle-1 3.8s ease-in-out infinite 1.2s;
+  }
+
+  /* 5. FAQ ACCORDION TRANSITIONS */
+  .faq-item {
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .faq-item.is-open .faq-answer {
+    grid-template-rows: 1fr;
+  }
+
+  .faq-chevron {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .faq-item.is-open .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* 6. GLOWS & EFEITOS */
+  .glow-gold {
+    box-shadow: 0 0 25px rgba(245, 183, 0, 0.35);
+  }
+  .glow-cyan {
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+  }
+  .glow-whatsapp {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.45);
+  }
+  .radar-badge {
+    animation: radar-pulse 2s infinite;
+  }
+}
+
+/* ========================================================== */
+/* FORA DO LAYER (Sobrescrevem utilitários com especificidade) */
+/* ========================================================== */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-answer-inner {
+  overflow: hidden;
 }
