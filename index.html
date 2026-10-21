@@ -166,39 +166,60 @@
 
           <!-- Mockup Visual Principal com 3D Tilt e Badges Flutuantes -->
           <div class="hero-tilt-container relative w-full max-w-5xl mb-space-xl">
-            <div class="hero-tilt-card relative w-full rounded-2xl bg-surface-container/80 p-space-sm shadow-2xl backdrop-blur-xl border border-surface-variant/40">
+            <div class="hero-tilt-card relative w-full rounded-2xl bg-surface-container/80 p-2 sm:p-space-sm backdrop-blur-xl border border-[rgba(245,183,0,0.25)] shadow-[0_20px_50px_-10px_rgba(0,229,255,0.15),0_0_30px_rgba(245,183,0,0.1)]">
               <div class="relative overflow-hidden rounded-xl bg-surface-floor aspect-[16/9] w-full">
-                <img class="w-full h-full object-cover" width="1280" height="720" fetchpriority="high" alt="Dashboard do sistema LS Tecnologia com métricas de PDV em tempo real em laptop e smartphone" src="/assets/hero-mockup.webp" />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent opacity-80"></div>
+                <img class="w-full h-full object-cover" width="1376" height="768" fetchpriority="high" alt="Ecossistema Tecnológico Completo LS Tecnologia &amp; Gestão com Dashboard de Vendas em tempo real em laptop e smartphone" src="/assets/hero-workspace.png" />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-floor/50 via-transparent to-transparent opacity-80 pointer-events-none"></div>
 
-                <!-- Floating Feature Badges (Desktop/Tablet >= 640px) com animações de flutuação -->
-                <div class="animate-float-badge-1 glow-cyan hidden sm:flex absolute top-6 left-6 items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-floor/90 text-secondary backdrop-blur-md shadow-xl border border-secondary/40">
+                <!-- Floating Feature Badges (Desktop/Tablet >= 640px) com animações de flutuação e pontos luminosos -->
+                <!-- Badge Superior Esquerdo: Dados em tempo real -->
+                <div class="animate-float-left glow-cyan hidden sm:flex absolute top-6 left-6 items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-floor/85 text-secondary backdrop-blur-md shadow-xl border border-secondary/40">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary shadow-[0_0_8px_#00e5ff]"></span>
+                  </span>
                   <span class="material-symbols-outlined text-secondary text-[20px]">query_stats</span>
-                  <span class="font-label-md text-label-md font-semibold">Dados em tempo real</span>
+                  <span class="font-label-md text-label-md font-semibold text-on-surface">Dados em tempo real</span>
                 </div>
-                <div class="animate-float-badge-2 glow-gold hidden sm:flex absolute bottom-6 left-6 items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-floor/90 text-primary backdrop-blur-md shadow-xl border border-primary/40">
-                  <span class="material-symbols-outlined text-primary text-[20px]">point_of_sale</span>
-                  <span class="font-label-md text-label-md font-semibold">+ Estoque &amp; Caixa Blindado</span>
-                </div>
-                <div class="animate-float-badge-3 glow-whatsapp hidden sm:flex absolute top-6 right-6 items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-floor/90 text-tertiary backdrop-blur-md shadow-xl border border-tertiary/40">
+
+                <!-- Badge Superior Direito: IA & WhatsApp 24/7 -->
+                <div class="animate-float-right glow-whatsapp hidden sm:flex absolute top-6 right-6 items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-floor/85 text-tertiary backdrop-blur-md shadow-xl border border-tertiary/40">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary shadow-[0_0_8px_#25d366]"></span>
+                  </span>
                   <span class="material-symbols-outlined text-tertiary text-[20px]">smart_toy</span>
-                  <span class="font-label-md text-label-md font-semibold">IA &amp; WhatsApp 24/7</span>
+                  <span class="font-label-md text-label-md font-semibold text-on-surface">IA &amp; WhatsApp 24/7</span>
+                </div>
+
+                <!-- Badge Inferior Esquerdo: Estoque & Caixa Blindado -->
+                <div class="animate-float-badge-2 glow-gold hidden sm:flex absolute bottom-6 left-6 items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-floor/85 text-primary backdrop-blur-md shadow-xl border border-primary/40">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary shadow-[0_0_8px_#ffd033]"></span>
+                  </span>
+                  <span class="material-symbols-outlined text-primary text-[20px]">point_of_sale</span>
+                  <span class="font-label-md text-label-md font-semibold text-on-surface">+ Estoque &amp; Caixa Blindado</span>
                 </div>
               </div>
 
               <!-- Fita Mobile de Badges (Organização vertical sem colisão na imagem) -->
               <div class="grid grid-cols-1 sm:hidden gap-2 pt-3 px-1">
                 <div class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/90 text-secondary border border-secondary/30 text-xs font-semibold">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary shadow-[0_0_6px_#00e5ff]"></span>
+                  </span>
                   <span class="material-symbols-outlined text-secondary text-[18px]">query_stats</span>
-                  <span>Vendas &amp; Métricas em tempo real</span>
-                </div>
-                <div class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/90 text-primary border border-primary/30 text-xs font-semibold">
-                  <span class="material-symbols-outlined text-primary text-[18px]">point_of_sale</span>
-                  <span>Estoque, PDV &amp; Caixa Blindado</span>
+                  <span>Dados em tempo real</span>
                 </div>
                 <div class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high/90 text-tertiary border border-tertiary/30 text-xs font-semibold">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary shadow-[0_0_6px_#25d366]"></span>
+                  </span>
                   <span class="material-symbols-outlined text-tertiary text-[18px]">smart_toy</span>
-                  <span>Atendimento IA &amp; WhatsApp 24/7</span>
+                  <span>IA &amp; WhatsApp 24/7</span>
                 </div>
               </div>
             </div>

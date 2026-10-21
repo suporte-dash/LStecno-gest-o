@@ -308,32 +308,63 @@ export function setupConversionTracking() {
     });
   });
 
-  // 5. Hero Mockup 3D Tilt Effect
+  // 5. Hero Mockup 3D Tilt Effect (60 FPS com lerp suave e limite de +-5deg; desativado em touch)
   const tiltContainer = document.querySelector('.hero-tilt-container');
   const tiltCard = document.querySelector('.hero-tilt-card');
   if (tiltContainer && tiltCard) {
-    let isHovering = false;
+    const isTouch = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
+    if (!isTouch) {
+      let rafId = null;
+      let targetRotateX = 0;
+      let targetRotateY = 0;
+      let currentRotateX = 0;
+      let currentRotateY = 0;
+      let isHovering = false;
 
-    tiltContainer.addEventListener('mouseenter', () => {
-      isHovering = true;
-    });
+      const updateTilt = () => {
+        if (!isHovering) {
+          currentRotateX += (0 - currentRotateX) * 0.12;
+          currentRotateY += (0 - currentRotateY) * 0.12;
+          tiltCard.style.transform = `perspective(1000px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg)`;
+          if (Math.abs(currentRotateX) > 0.02 || Math.abs(currentRotateY) > 0.02) {
+            rafId = requestAnimationFrame(updateTilt);
+          } else {
+            currentRotateX = 0;
+            currentRotateY = 0;
+            tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            rafId = null;
+          }
+          return;
+        }
 
-    tiltContainer.addEventListener('mousemove', (e) => {
-      if (!isHovering) return;
-      const rect = tiltContainer.getBoundingClientRect();
-      const xNorm = (e.clientX - rect.left) / rect.width - 0.5;
-      const yNorm = (e.clientY - rect.top) / rect.height - 0.5;
+        currentRotateX += (targetRotateX - currentRotateX) * 0.15;
+        currentRotateY += (targetRotateY - currentRotateY) * 0.15;
+        tiltCard.style.transform = `perspective(1000px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg) scale3d(1.01, 1.01, 1.01)`;
+        rafId = requestAnimationFrame(updateTilt);
+      };
 
-      const rotateX = -yNorm * 8; // Max 8 graus
-      const rotateY = xNorm * 8;
+      tiltContainer.addEventListener('mouseenter', () => {
+        isHovering = true;
+        tiltCard.style.transition = 'none';
+        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+      });
 
-      tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
-    });
+      tiltContainer.addEventListener('mousemove', (e) => {
+        const rect = tiltContainer.getBoundingClientRect();
+        const xNorm = (e.clientX - rect.left) / rect.width - 0.5;
+        const yNorm = (e.clientY - rect.top) / rect.height - 0.5;
 
-    tiltContainer.addEventListener('mouseleave', () => {
-      isHovering = false;
-      tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
+        // Limita a rotação máxima suave rigorosamente entre -5deg e +5deg
+        targetRotateX = Math.max(-5, Math.min(5, -yNorm * 10));
+        targetRotateY = Math.max(-5, Math.min(5, xNorm * 10));
+        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+      });
+
+      tiltContainer.addEventListener('mouseleave', () => {
+        isHovering = false;
+        tiltCard.style.transition = 'transform 0.5s ease-out';
+      });
+    }
   }
 
   // 6. Scroll Reveal Observer

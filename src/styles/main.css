@@ -153,6 +153,33 @@
   }
 }
 
+@keyframes float-badge-left {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-badge-right {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hero-card-mobile-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 /* ========================================================== */
 /* LAYER COMPONENTS: Permite que utilitários Tailwind vençam  */
 /* ========================================================== */
@@ -228,8 +255,8 @@
   }
 
   .btn-shimmer:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 28px rgba(245, 183, 0, 0.55), 0 4px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(245, 183, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.4);
   }
 
   /* 3. BORDA ILUMINADA NO COMBO ESPECIAL */
@@ -268,17 +295,31 @@
 
   /* 4. MICRO-MOVIMENTO NO HERO */
   .hero-tilt-container {
-    perspective: 1200px;
+    perspective: 1000px;
   }
 
   .hero-tilt-card {
-    transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+    transition: transform 0.5s ease-out;
     transform-style: preserve-3d;
     will-change: transform;
   }
 
+  @media (pointer: coarse), (max-width: 767px) {
+    .hero-tilt-card {
+      animation: hero-card-mobile-float 4s ease-in-out infinite;
+    }
+  }
+
+  .animate-float-left {
+    animation: float-badge-left 3.6s ease-in-out infinite;
+  }
+
+  .animate-float-right {
+    animation: float-badge-right 4.2s ease-in-out infinite;
+  }
+
   .animate-float-badge-1 {
-    animation: float-gentle-1 3.5s ease-in-out infinite;
+    animation: float-badge-left 3.6s ease-in-out infinite;
   }
 
   .animate-float-badge-2 {
@@ -286,7 +327,7 @@
   }
 
   .animate-float-badge-3 {
-    animation: float-gentle-1 3.8s ease-in-out infinite 1.2s;
+    animation: float-badge-right 4.2s ease-in-out infinite;
   }
 
   /* 5. FAQ ACCORDION TRANSITIONS */
