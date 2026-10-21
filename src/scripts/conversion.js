@@ -8,15 +8,22 @@ export const CONFIG = {
   whatsappNumber: '5591982221400',
   messages: {
     hero: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
-    venda: 'Olá! Tenho interesse no Plano Venda+ para minha empresa.',
+    header: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    'mobile-menu': 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    final: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    dock: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    floating: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    venda: 'Quero testar o Venda+',
+    vendaMais: 'Quero testar o Venda+',
     vendaMei: 'Olá! Tenho interesse no Plano Venda+ MEI (R$ 159,00/mês). Poderia me explicar como funciona o teste?',
     vendaSimples: 'Olá! Quero mais detalhes sobre o Plano Venda+ Simples (R$ 169,00/mês) para minha empresa.',
-    gerente: 'Olá! Gostaria de conhecer o Gerente Virtual com IA para minha empresa.',
+    gerente: 'Quero conhecer o Gerente Virtual',
+    gerenteVirtual: 'Quero conhecer o Gerente Virtual',
     gerenteCompleto: 'Olá! Gostaria de ativar o Gerente Virtual Completo (R$ 185,00/mês) com relatórios no WhatsApp.',
-    tiagenda: 'Olá! Quero testar o TiAgenda com agendamento automático via WhatsApp.',
+    tiagenda: 'Quero conhecer o TiAgenda',
     tiagendaIA: 'Olá! Quero automatizar o atendimento e agendamento da minha empresa com o TiAgenda & IA (R$ 210,00/mês).',
-    comboMei: 'Olá! Quero aproveitar a oferta especial do COMBO MEI DE SUCESSO por R$ 239,90/mês!',
-    geral: 'Olá! Gostaria de conversar com um consultor da LS Tecnologia & Gestão.',
+    comboMei: 'Quero aproveitar o Combo MEI de Sucesso',
+    geral: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
   }
 };
 
