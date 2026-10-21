@@ -83,6 +83,7 @@
   --spacing-gutter-mobile: 1rem;
   --spacing-margin: 2rem;
   --spacing-margin-mobile: 1rem;
+  --spacing-section: 5rem;
 }
 
 @layer base {
