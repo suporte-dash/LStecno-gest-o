@@ -189,6 +189,17 @@
   }
 }
 
+@keyframes neuralPulse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 10px 25px rgba(0, 229, 255, 0.2)) drop-shadow(0 0 15px rgba(245, 183, 0, 0.25));
+  }
+  50% {
+    transform: translateY(-8px) scale(1.015);
+    filter: drop-shadow(0 20px 40px rgba(0, 229, 255, 0.4)) drop-shadow(0 0 30px rgba(245, 183, 0, 0.45));
+  }
+}
+
 @keyframes badge-pulse-subtle-1 {
   0%, 100% {
     transform: scale(1);
@@ -372,6 +383,39 @@
 
   .venda-plus-container:hover .venda-plus-asset {
     filter: drop-shadow(0 15px 35px rgba(0, 229, 255, 0.2)) drop-shadow(0 0 20px rgba(245, 183, 0, 0.25));
+  }
+
+  /* 4.2 PULSO NEURAL 3D & HALO SPOTLIGHT (GERENTE VIRTUAL) */
+  .neural-brain-asset {
+    animation: neuralPulse 4s ease-in-out infinite;
+    will-change: transform, filter;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    transition: filter 0.4s ease;
+  }
+
+  .gerente-virtual-container:hover .neural-brain-asset {
+    filter: drop-shadow(0 25px 45px rgba(0, 229, 255, 0.45)) drop-shadow(0 0 35px rgba(245, 183, 0, 0.5));
+  }
+
+  .neural-halo-bg {
+    position: absolute;
+    inset: -15%;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(245, 183, 0, 0.16) 0%, rgba(0, 229, 255, 0.09) 45%, transparent 72%);
+    filter: blur(44px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+    transform: translateZ(0);
+  }
+
+  .gerente-virtual-container:hover .neural-halo-bg {
+    opacity: 1;
   }
 
   .animate-badge-pulse-1 {

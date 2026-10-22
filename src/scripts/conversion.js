@@ -297,7 +297,7 @@ export function setupConversionTracking() {
   }
 
   // 4. Card Spotlight & Radial Glow Mouse Tracking
-  const spotlightCards = document.querySelectorAll('.spotlight-card, .venda-plus-container');
+  const spotlightCards = document.querySelectorAll('.spotlight-card, .venda-plus-container, .gerente-virtual-container');
   spotlightCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
