@@ -11,7 +11,7 @@ export const CONFIG = {
     hero: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
     header: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
     'mobile-menu': 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
-    final: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    final: 'Olá! Acessei o site da LS Tecnologia e gostaria de solicitar uma demonstração gratuita dos sistemas.',
     dock: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
     floating: 'Olá! Gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
     venda: 'Quero testar o Venda+',
@@ -415,7 +415,7 @@ export function setupConversionTracking() {
   }
 
   // 4. Card Spotlight & Radial Glow Mouse Tracking
-  const spotlightCards = document.querySelectorAll('.spotlight-card, .venda-plus-container, .gerente-virtual-container, .tiagenda-container, .golden-voucher-container, .cyber-security-container');
+  const spotlightCards = document.querySelectorAll('.spotlight-card, .venda-plus-container, .gerente-virtual-container, .tiagenda-container, .golden-voucher-container, .cyber-security-container, .cyber-portal-container');
   spotlightCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
