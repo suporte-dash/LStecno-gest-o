@@ -545,6 +545,108 @@
     animation: badge-pulse-subtle-2 3.8s ease-in-out infinite 0.6s;
   }
 
+  /* ========================================================== */
+  /* SIMULADOR EM TEMPO REAL - CYBERNETIC DARK GOLD             */
+  /* ========================================================== */
+  .simulator-segment-card {
+    background-color: #171c25;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.25s ease, 
+                box-shadow 0.25s ease, 
+                background 0.25s ease;
+  }
+
+  .simulator-segment-card:hover {
+    border-color: rgba(245, 183, 0, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .simulator-segment-card.is-active {
+    border-color: #f5b700;
+    background: linear-gradient(135deg, rgba(245, 183, 0, 0.12) 0%, #171c25 100%);
+    box-shadow: 0 0 18px rgba(245, 183, 0, 0.25);
+  }
+
+  .simulator-addon-card {
+    background-color: #171c25;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.25s ease, 
+                box-shadow 0.25s ease, 
+                background 0.25s ease;
+  }
+
+  .simulator-addon-card:hover {
+    border-color: rgba(0, 229, 255, 0.35);
+  }
+
+  .simulator-addon-card.is-active {
+    border-color: #00e5ff;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.09) 0%, #171c25 100%);
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.22);
+    transform: scale(1.015);
+  }
+
+  /* Cybernetic Toggle Switch */
+  .cyber-toggle {
+    width: 44px;
+    height: 24px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+  }
+
+  .cyber-toggle-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    background: #94a3b8;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .simulator-addon-card.is-active .cyber-toggle {
+    background: rgba(0, 229, 255, 0.25);
+    border-color: #00e5ff;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  }
+
+  .simulator-addon-card.is-active .cyber-toggle-thumb {
+    transform: translateX(20px);
+    background: #00e5ff;
+    box-shadow: 0 0 8px #00e5ff;
+  }
+
+  /* Simulator Summary Card */
+  .simulator-summary-card {
+    background: rgba(10, 14, 23, 0.95);
+    border: 1px solid rgba(245, 183, 0, 0.3);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 183, 0, 0.12);
+  }
+
+  .simulator-cta-btn {
+    background: linear-gradient(90deg, #f5b700 0%, #ffd000 50%, #e0a200 100%);
+    box-shadow: 0 10px 25px rgba(245, 183, 0, 0.35);
+  }
+
+  .simulator-cta-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 35px rgba(245, 183, 0, 0.5);
+  }
+
+  .countup-glow {
+    text-shadow: 0 0 16px rgba(245, 183, 0, 0.65);
+  }
+
   /* 5. FAQ ACCORDION TRANSITIONS */
   .faq-item {
     transition: background-color 0.25s ease, border-color 0.25s ease;

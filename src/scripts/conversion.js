@@ -93,29 +93,110 @@ function setupMobileSystemTabs() {
 // ================================================================
 // MOTOR DA CALCULADORA INTERATIVA / SIMULADOR EM TEMPO REAL
 // ================================================================
+// MOTOR DA CALCULADORA INTERATIVA / SIMULADOR EM TEMPO REAL
+// ================================================================
 function setupInteractiveSimulator() {
   const simulatorContainer = document.getElementById('simulador-solucoes');
   if (!simulatorContainer) return;
 
+  // Segmentos / Planos Base (Seleção Única)
   const segmentPrices = {
-    'varejo': { name: 'Varejo & Lojas', base: 169, label: 'Plano Venda+ Simples Comercial' },
-    'mercado': { name: 'Mercado & Mercearia', base: 169, label: 'Plano Venda+ com Frente de Caixa' },
-    'restaurante': { name: 'Restaurante & Bar', base: 169, label: 'Plano Venda+ com Comandas & Cardápio' },
-    'servicos': { name: 'Clínicas & Serviços', base: 210, label: 'Plano TiAgenda + WhatsApp + IA' },
-    'mei': { name: 'MEI Inicial', base: 159, label: 'Plano Venda+ MEI Essencial' }
+    'mei': { 
+      name: 'MEI Inicial Essencial', 
+      base: 159, 
+      label: 'Plano Venda+ MEI Essencial' 
+    },
+    'varejo': { 
+      name: 'Varejo & Lojas', 
+      base: 159, 
+      label: 'Plano Venda+ MEI' 
+    },
+    'mercado': { 
+      name: 'Mercado & Mercearia', 
+      base: 169, 
+      label: 'Plano Venda+ Simples' 
+    },
+    'restaurante': { 
+      name: 'Restaurante & Bar', 
+      base: 169, 
+      label: 'Plano Venda+ Simples + Mesas/Comandas' 
+    },
+    'servicos': { 
+      name: 'Clínicas & Serviços', 
+      base: 160, 
+      label: 'Plano TiAgenda Conectado' 
+    }
   };
 
+  // Módulos Adicionais / Turbinadores (Multi-Seleção)
   const addonPrices = {
-    'relatorios-whatsapp': { name: 'Relatórios no WhatsApp', price: 50 },
-    'ia-atendimento': { name: 'Robô IA de Atendimento 24/7', price: 70 },
-    'pix-integrado': { name: 'PIX Integrado com Baixa Automática', price: 80 },
-    'pdv-movel': { name: 'PDV Móvel (Celular/Maquininha)', price: 40 },
-    'modulo-tef': { name: 'Módulo TEF POS para Cartão', price: 80 },
-    'usuario-extra': { name: '2 Usuários Extras', price: 8 }
+    'relatorios-whatsapp': { 
+      name: 'Relatórios WhatsApp', 
+      price: 60, 
+      desc: 'Envio diário de fechamento de caixa e faturamento' 
+    },
+    'ia-atendimento': { 
+      name: 'Robô IA 24/7 (TiAgenda)', 
+      price: 50, 
+      desc: 'Atende clientes, tira dúvidas e fecha pedidos' 
+    },
+    'pix-integrado': { 
+      name: 'PIX Integrado', 
+      price: 80, 
+      desc: 'QR Code na tela com baixa automática no PDV' 
+    },
+    'pdv-movel': { 
+      name: 'PDV Móvel', 
+      price: 40, 
+      desc: 'Venda no celular ou maquininha smart Android' 
+    },
+    'modulo-tef': { 
+      name: 'Módulo TEF POS', 
+      price: 80, 
+      desc: 'Conexão multi-bandeiras com pinpad no caixa' 
+    },
+    'usuario-extra': { 
+      name: '2 Usuários Extras', 
+      price: 8, 
+      desc: 'Acessos simultâneos adicionais para a equipe' 
+    }
   };
 
   let currentSegment = 'mei';
   let selectedAddons = new Set(['relatorios-whatsapp']);
+  let previousTotal = null;
+  let activeAnimId = null;
+
+  // Interpolação Numérica Contínua (Count-Up Animation ~400ms a 60 FPS)
+  function animateValue(element, start, end, duration = 400) {
+    if (activeAnimId) {
+      cancelAnimationFrame(activeAnimId);
+      activeAnimId = null;
+    }
+
+    if (start === end) {
+      element.textContent = `R$ ${end.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      return;
+    }
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // Easing out cubic: curva suave de desaceleração
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const current = easeProgress * (end - start) + start;
+      element.textContent = `R$ ${current.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      
+      if (progress < 1) {
+        activeAnimId = window.requestAnimationFrame(step);
+      } else {
+        element.textContent = `R$ ${end.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        activeAnimId = null;
+      }
+    };
+    activeAnimId = window.requestAnimationFrame(step);
+  }
 
   function renderSimulator() {
     const segmentData = segmentPrices[currentSegment] || segmentPrices['mei'];
@@ -129,78 +210,115 @@ function setupInteractiveSimulator() {
       }
     });
 
-    let subtotal = segmentData.base + addonsTotal;
-    let discount = 0;
-    if (selectedAddons.size >= 2) {
-      discount = 20; // Desconto progressivo de combo
-    }
-    const finalTotal = subtotal - discount;
+    // Cálculo Reativo em Tempo Real: Plano Base + Módulos
+    const finalTotal = segmentData.base + addonsTotal;
 
-    // Atualiza elementos visuais do DOM
+    // Elementos do DOM
     const segmentNameEl = document.getElementById('simulador-resumo-segmento');
     const segmentBaseEl = document.getElementById('simulador-resumo-base');
     const totalPriceEl = document.getElementById('simulador-preco-final');
-    const discountEl = document.getElementById('simulador-badge-desconto');
     const addonsListEl = document.getElementById('simulador-lista-selecionados');
+    const modulosCountEl = document.getElementById('simulador-modulos-count');
     const whatsappBtn = document.getElementById('simulador-whatsapp-btn');
 
     if (segmentNameEl) segmentNameEl.textContent = segmentData.name;
-    if (segmentBaseEl) segmentBaseEl.textContent = `${segmentData.label} (R$ ${segmentData.base.toFixed(2).replace('.', ',')})`;
-    
-    // Efeito de pulso suave e transição de preço
+    if (segmentBaseEl) {
+      segmentBaseEl.textContent = `${segmentData.label} (R$ ${segmentData.base.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })})`;
+    }
+
+    // Atualiza contagem de módulos
+    if (modulosCountEl) {
+      const count = selectedAddons.size;
+      modulosCountEl.textContent = count === 0 
+        ? 'Nenhum módulo ativo' 
+        : `${count} ${count === 1 ? 'módulo ativo' : 'módulos ativos'}`;
+    }
+
+    // Animação Numérica (Count-Up) e Feedback Tátil
     if (totalPriceEl) {
-      totalPriceEl.textContent = `R$ ${finalTotal.toFixed(2).replace('.', ',')}`;
-      totalPriceEl.classList.add('scale-105', 'text-surface-tint');
-      setTimeout(() => {
-        totalPriceEl.classList.remove('scale-105', 'text-surface-tint');
-      }, 200);
+      const startVal = previousTotal !== null ? previousTotal : finalTotal;
+      animateValue(totalPriceEl, startVal, finalTotal, 400);
+      previousTotal = finalTotal;
+
+      totalPriceEl.classList.add('countup-glow');
+      setTimeout(() => totalPriceEl.classList.remove('countup-glow'), 400);
     }
 
-    if (discountEl) {
-      if (discount > 0) {
-        discountEl.classList.remove('hidden');
-        discountEl.textContent = `Economia de R$ ${discount.toFixed(2).replace('.', ',')}/mês aplicada`;
-      } else {
-        discountEl.classList.add('hidden');
-      }
-    }
-
+    // Tags Holográficas de Módulos Selecionados
     if (addonsListEl) {
       if (selectedAddonNames.length === 0) {
-        addonsListEl.innerHTML = '<span class="text-xs text-on-surface-variant italic">Nenhum módulo opcional selecionado</span>';
+        addonsListEl.innerHTML = '<span class="text-xs text-on-surface-variant italic py-1">Plano Base Essencial (nenhum módulo extra)</span>';
       } else {
         addonsListEl.innerHTML = selectedAddonNames.map(name => 
-          `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-secondary text-xs font-semibold border border-secondary/20">
-            <span class="material-symbols-outlined text-[14px]">check</span> ${name}
+          `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-[#00e5ff] text-xs font-semibold border border-[#00e5ff]/30 shadow-[0_0_10px_rgba(0,229,255,0.15)] transition-all">
+            <span class="material-symbols-outlined text-[14px]">check_circle</span> ${name}
           </span>`
         ).join('');
       }
     }
 
-    // Monta URL de WhatsApp personalizada
+    // Atualiza classes ativas e acessibilidade ARIA nos cards de segmento
+    simulatorContainer.querySelectorAll('[data-segment-choice]').forEach((btn) => {
+      const seg = btn.getAttribute('data-segment-choice');
+      const isActive = seg === currentSegment;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+      
+      const iconContainer = btn.querySelector('.segment-icon-box');
+      if (iconContainer) {
+        if (isActive) {
+          iconContainer.classList.add('text-primary');
+          iconContainer.classList.remove('text-on-surface-variant');
+        } else {
+          iconContainer.classList.remove('text-primary');
+          iconContainer.classList.add('text-on-surface-variant');
+        }
+      }
+    });
+
+    // Atualiza classes ativas nos cards e toggles de módulos
+    simulatorContainer.querySelectorAll('[data-addon-choice]').forEach((checkbox) => {
+      const addonKey = checkbox.getAttribute('data-addon-choice');
+      const isChecked = selectedAddons.has(addonKey);
+      checkbox.checked = isChecked;
+      const card = checkbox.closest('.simulator-addon-card');
+      if (card) {
+        card.classList.toggle('is-active', isChecked);
+        const priceBadge = card.querySelector('.addon-price-badge');
+        if (priceBadge) {
+          if (isChecked) {
+            priceBadge.classList.add('text-[#00e5ff]');
+            priceBadge.classList.remove('text-on-surface-variant');
+          } else {
+            priceBadge.classList.remove('text-[#00e5ff]');
+            priceBadge.classList.add('text-on-surface-variant');
+          }
+        }
+      }
+    });
+
+    // Monta Link de Contratação Dinâmico no WhatsApp
     if (whatsappBtn) {
       const cleanNumber = CONFIG.whatsappNumber.replace(/\D/g, '');
-      const addonsText = selectedAddonNames.length > 0 ? `\nMódulos adicionais: ${selectedAddonNames.join(', ')}` : '\nSem adicionais extras';
-      const msg = `Olá! Montei meu pacote personalizado no site da LS Tecnologia:\n• Segmento: ${segmentData.name}\n• Base: ${segmentData.label}${addonsText}\n• Valor estimado: R$ ${finalTotal.toFixed(2).replace('.', ',')}/mês.\nGostaria de agendar a ativação deste plano!`;
+      const formattedTotal = finalTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const modulosString = selectedAddonNames.length > 0 
+        ? selectedAddonNames.join(', ')
+        : 'sem módulos adicionais (Plano Base)';
+      
+      const msg = `Olá! Simulei no site o pacote para o segmento ${segmentData.name} com os módulos ${modulosString} ficando em R$ ${formattedTotal}/mês. Gostaria de ativar!`;
       whatsappBtn.setAttribute('href', `https://wa.me/${cleanNumber}?text=${encodeURIComponent(msg)}`);
     }
   }
 
-  // Event Listeners para botões de segmento
+  // Event Listeners para botões de segmento (Radio)
   simulatorContainer.querySelectorAll('[data-segment-choice]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      simulatorContainer.querySelectorAll('[data-segment-choice]').forEach(b => {
-        b.classList.remove('border-primary', 'bg-surface-container-high', 'text-primary');
-        b.classList.add('border-surface-variant/30', 'bg-surface-container-low', 'text-on-surface');
-      });
-      btn.classList.remove('border-surface-variant/30', 'bg-surface-container-low', 'text-on-surface');
-      btn.classList.add('border-primary', 'bg-surface-container-high', 'text-primary');
       currentSegment = btn.getAttribute('data-segment-choice');
       renderSimulator();
     });
   });
 
-  // Event Listeners para checkboxes de adicionais
+  // Event Listeners para checkboxes/toggles de módulos adicionais
   simulatorContainer.querySelectorAll('[data-addon-choice]').forEach((checkbox) => {
     checkbox.addEventListener('change', () => {
       const addonKey = checkbox.getAttribute('data-addon-choice');
@@ -213,7 +331,7 @@ function setupInteractiveSimulator() {
     });
   });
 
-  // Render inicial
+  // Render inicial com animação e valores sincronizados
   renderSimulator();
 }
 

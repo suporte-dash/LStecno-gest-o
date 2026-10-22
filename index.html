@@ -960,60 +960,75 @@
                   <span class="text-xs text-on-surface-variant hidden sm:inline">Clique para selecionar</span>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" role="radiogroup" aria-label="Segmento do seu negócio">
                   
-                  <!-- Opção 1: Varejo (Default Selecionado) -->
-                  <button type="button" data-segment-choice="varejo" class="cursor-pointer text-left p-3.5 rounded-xl border border-primary bg-surface-container-high text-primary transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
-                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm">
-                      <span class="material-symbols-outlined text-[22px]">storefront</span>
-                    </div>
-                    <div class="flex flex-col min-w-0">
-                      <span class="text-sm font-bold truncate">Varejo &amp; Lojas</span>
-                      <span class="text-xs opacity-80 truncate">A partir de R$ 169/mês</span>
-                    </div>
-                  </button>
-
-                  <!-- Opção 2: Mercado -->
-                  <button type="button" data-segment-choice="mercado" class="cursor-pointer text-left p-3.5 rounded-xl border border-surface-variant/30 bg-surface-container-low text-on-surface transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
-                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm text-secondary">
-                      <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
-                    </div>
-                    <div class="flex flex-col min-w-0">
-                      <span class="text-sm font-bold truncate">Mercado &amp; Mercearia</span>
-                      <span class="text-xs text-on-surface-variant truncate">Frente de caixa rápida</span>
-                    </div>
-                  </button>
-
-                  <!-- Opção 3: Restaurante -->
-                  <button type="button" data-segment-choice="restaurante" class="cursor-pointer text-left p-3.5 rounded-xl border border-surface-variant/30 bg-surface-container-low text-on-surface transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
-                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm text-primary">
-                      <span class="material-symbols-outlined text-[22px]">restaurant</span>
-                    </div>
-                    <div class="flex flex-col min-w-0">
-                      <span class="text-sm font-bold truncate">Restaurante &amp; Bar</span>
-                      <span class="text-xs text-on-surface-variant truncate">Comandas &amp; Cardápio</span>
-                    </div>
-                  </button>
-
-                  <!-- Opção 4: Serviços -->
-                  <button type="button" data-segment-choice="servicos" class="cursor-pointer text-left p-3.5 rounded-xl border border-surface-variant/30 bg-surface-container-low text-on-surface transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
-                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm text-tertiary">
-                      <span class="material-symbols-outlined text-[22px]">medical_services</span>
-                    </div>
-                    <div class="flex flex-col min-w-0">
-                      <span class="text-sm font-bold truncate">Clínicas &amp; Serviços</span>
-                      <span class="text-xs text-on-surface-variant truncate">TiAgenda + WhatsApp + IA</span>
-                    </div>
-                  </button>
-
-                  <!-- Opção 5: MEI -->
-                  <button type="button" data-segment-choice="mei" class="cursor-pointer text-left p-3.5 rounded-xl border border-surface-variant/30 bg-surface-container-low text-on-surface transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 sm:col-span-2 min-h-[56px]">
-                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm text-primary">
+                  <!-- Opção 1: MEI (Default Selecionado) -->
+                  <button type="button" role="radio" aria-checked="true" data-segment-choice="mei" class="simulator-segment-card is-active cursor-pointer text-left p-3.5 rounded-xl transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px] sm:col-span-2">
+                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm segment-icon-box text-primary">
                       <span class="material-symbols-outlined text-[22px]">badge</span>
                     </div>
-                    <div class="flex flex-col min-w-0">
-                      <span class="text-sm font-bold truncate">MEI Inicial Essencial</span>
-                      <span class="text-xs text-on-surface-variant truncate">Pacote econômico para microempreendedores individuais (R$ 159/mês)</span>
+                    <div class="flex flex-col min-w-0 flex-1">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">MEI Inicial Essencial</span>
+                        <span class="text-xs font-black text-primary px-2 py-0.5 rounded-md bg-primary/10 border border-primary/20">R$ 159/mês</span>
+                      </div>
+                      <span class="text-xs text-on-surface-variant truncate">Plano Venda+ MEI Essencial para microempreendedores</span>
+                    </div>
+                  </button>
+
+                  <!-- Opção 2: Varejo & Lojas -->
+                  <button type="button" role="radio" aria-checked="false" data-segment-choice="varejo" class="simulator-segment-card cursor-pointer text-left p-3.5 rounded-xl transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
+                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm segment-icon-box text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[22px]">storefront</span>
+                    </div>
+                    <div class="flex flex-col min-w-0 flex-1">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Varejo &amp; Lojas</span>
+                        <span class="text-xs font-bold text-on-surface-variant">R$ 159/mês</span>
+                      </div>
+                      <span class="text-xs text-on-surface-variant truncate">Plano Base: Venda+ MEI</span>
+                    </div>
+                  </button>
+
+                  <!-- Opção 3: Mercado & Mercearia -->
+                  <button type="button" role="radio" aria-checked="false" data-segment-choice="mercado" class="simulator-segment-card cursor-pointer text-left p-3.5 rounded-xl transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
+                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm segment-icon-box text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
+                    </div>
+                    <div class="flex flex-col min-w-0 flex-1">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Mercado &amp; Mercearia</span>
+                        <span class="text-xs font-bold text-on-surface-variant">R$ 169/mês</span>
+                      </div>
+                      <span class="text-xs text-on-surface-variant truncate">Plano Base: Venda+ Simples</span>
+                    </div>
+                  </button>
+
+                  <!-- Opção 4: Restaurante & Bar -->
+                  <button type="button" role="radio" aria-checked="false" data-segment-choice="restaurante" class="simulator-segment-card cursor-pointer text-left p-3.5 rounded-xl transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
+                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm segment-icon-box text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[22px]">restaurant</span>
+                    </div>
+                    <div class="flex flex-col min-w-0 flex-1">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Restaurante &amp; Bar</span>
+                        <span class="text-xs font-bold text-on-surface-variant">R$ 169/mês</span>
+                      </div>
+                      <span class="text-xs text-on-surface-variant truncate">Mesas, Comandas &amp; Cardápio</span>
+                    </div>
+                  </button>
+
+                  <!-- Opção 5: Clínicas & Serviços -->
+                  <button type="button" role="radio" aria-checked="false" data-segment-choice="servicos" class="simulator-segment-card cursor-pointer text-left p-3.5 rounded-xl transition-all flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary/40 min-h-[56px]">
+                    <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm segment-icon-box text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[22px]">medical_services</span>
+                    </div>
+                    <div class="flex flex-col min-w-0 flex-1">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Clínicas &amp; Serviços</span>
+                        <span class="text-xs font-bold text-on-surface-variant">R$ 160/mês</span>
+                      </div>
+                      <span class="text-xs text-on-surface-variant truncate">TiAgenda Conectado + WhatsApp</span>
                     </div>
                   </button>
 
@@ -1027,81 +1042,87 @@
                     <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-secondary/20 text-secondary font-black text-xs">2</span>
                     <h3 class="font-title-sm text-title-sm text-on-surface font-bold">Turbine com Módulos Adicionais</h3>
                   </div>
-                  <span class="text-xs text-secondary font-medium">Combo: 2+ módulos = Desconto!</span>
+                  <span class="text-xs text-secondary font-medium">Multi-seleção reativa</span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   
                   <!-- Addon 1: Relatórios WhatsApp (Default Checked) -->
-                  <label class="cursor-pointer relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors border border-surface-variant/30 min-h-[56px] select-none">
-                    <input type="checkbox" data-addon-choice="relatorios-whatsapp" checked class="w-5 h-5 mt-0.5 rounded accent-[#f5b700] text-primary focus:ring-primary cursor-pointer shrink-0" />
-                    <div class="flex flex-col min-w-0 flex-1">
+                  <label class="simulator-addon-card is-active cursor-pointer relative flex items-center justify-between gap-3 p-3.5 rounded-xl transition-all min-h-[64px] select-none">
+                    <input type="checkbox" data-addon-choice="relatorios-whatsapp" checked class="sr-only" />
+                    <div class="flex flex-col min-w-0 flex-1 pr-2">
                       <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-bold text-on-surface">Relatórios WhatsApp</span>
-                        <span class="text-xs font-bold text-primary shrink-0">+R$ 50/mês</span>
+                        <span class="addon-price-badge text-xs font-bold text-[#00e5ff] shrink-0">+R$ 60/mês</span>
                       </div>
-                      <span class="text-xs text-on-surface-variant mt-0.5">Envio diário de fechamento de caixa e faturamento</span>
+                      <span class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">Envio diário de fechamento de caixa e faturamento</span>
                     </div>
+                    <div class="cyber-toggle shrink-0" aria-hidden="true"><div class="cyber-toggle-thumb"></div></div>
                   </label>
 
-                  <!-- Addon 2: Robô IA Atendimento -->
-                  <label class="cursor-pointer relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors border border-surface-variant/30 min-h-[56px] select-none">
-                    <input type="checkbox" data-addon-choice="ia-atendimento" class="w-5 h-5 mt-0.5 rounded accent-[#f5b700] text-primary focus:ring-primary cursor-pointer shrink-0" />
-                    <div class="flex flex-col min-w-0 flex-1">
+                  <!-- Addon 2: Robô IA 24/7 (TiAgenda) -->
+                  <label class="simulator-addon-card cursor-pointer relative flex items-center justify-between gap-3 p-3.5 rounded-xl transition-all min-h-[64px] select-none">
+                    <input type="checkbox" data-addon-choice="ia-atendimento" class="sr-only" />
+                    <div class="flex flex-col min-w-0 flex-1 pr-2">
                       <div class="flex items-center justify-between gap-1">
-                        <span class="text-sm font-bold text-on-surface">Robô IA 24/7</span>
-                        <span class="text-xs font-bold text-secondary shrink-0">+R$ 70/mês</span>
+                        <span class="text-sm font-bold text-on-surface">Robô IA 24/7 (TiAgenda)</span>
+                        <span class="addon-price-badge text-xs font-bold text-on-surface-variant shrink-0">+R$ 50/mês</span>
                       </div>
-                      <span class="text-xs text-on-surface-variant mt-0.5">Atende clientes, tira dúvidas e fecha pedidos</span>
+                      <span class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">Atende clientes, tira dúvidas e fecha pedidos</span>
                     </div>
+                    <div class="cyber-toggle shrink-0" aria-hidden="true"><div class="cyber-toggle-thumb"></div></div>
                   </label>
 
                   <!-- Addon 3: PIX Integrado -->
-                  <label class="cursor-pointer relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors border border-surface-variant/30 min-h-[56px] select-none">
-                    <input type="checkbox" data-addon-choice="pix-integrado" class="w-5 h-5 mt-0.5 rounded accent-[#f5b700] text-primary focus:ring-primary cursor-pointer shrink-0" />
-                    <div class="flex flex-col min-w-0 flex-1">
+                  <label class="simulator-addon-card cursor-pointer relative flex items-center justify-between gap-3 p-3.5 rounded-xl transition-all min-h-[64px] select-none">
+                    <input type="checkbox" data-addon-choice="pix-integrado" class="sr-only" />
+                    <div class="flex flex-col min-w-0 flex-1 pr-2">
                       <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-bold text-on-surface">PIX Integrado</span>
-                        <span class="text-xs font-bold text-tertiary shrink-0">+R$ 80/mês</span>
+                        <span class="addon-price-badge text-xs font-bold text-on-surface-variant shrink-0">+R$ 80/mês</span>
                       </div>
-                      <span class="text-xs text-on-surface-variant mt-0.5">QR Code na tela com baixa automática no PDV</span>
+                      <span class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">QR Code na tela com baixa automática no PDV</span>
                     </div>
+                    <div class="cyber-toggle shrink-0" aria-hidden="true"><div class="cyber-toggle-thumb"></div></div>
                   </label>
 
                   <!-- Addon 4: PDV Móvel -->
-                  <label class="cursor-pointer relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors border border-surface-variant/30 min-h-[56px] select-none">
-                    <input type="checkbox" data-addon-choice="pdv-movel" class="w-5 h-5 mt-0.5 rounded accent-[#f5b700] text-primary focus:ring-primary cursor-pointer shrink-0" />
-                    <div class="flex flex-col min-w-0 flex-1">
+                  <label class="simulator-addon-card cursor-pointer relative flex items-center justify-between gap-3 p-3.5 rounded-xl transition-all min-h-[64px] select-none">
+                    <input type="checkbox" data-addon-choice="pdv-movel" class="sr-only" />
+                    <div class="flex flex-col min-w-0 flex-1 pr-2">
                       <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-bold text-on-surface">PDV Móvel</span>
-                        <span class="text-xs font-bold text-primary shrink-0">+R$ 40/mês</span>
+                        <span class="addon-price-badge text-xs font-bold text-on-surface-variant shrink-0">+R$ 40/mês</span>
                       </div>
-                      <span class="text-xs text-on-surface-variant mt-0.5">Venda pelo celular ou maquininha smart Android</span>
+                      <span class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">Venda no celular ou maquininha smart Android</span>
                     </div>
+                    <div class="cyber-toggle shrink-0" aria-hidden="true"><div class="cyber-toggle-thumb"></div></div>
                   </label>
 
                   <!-- Addon 5: Módulo TEF POS -->
-                  <label class="cursor-pointer relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors border border-surface-variant/30 min-h-[56px] select-none">
-                    <input type="checkbox" data-addon-choice="modulo-tef" class="w-5 h-5 mt-0.5 rounded accent-[#f5b700] text-primary focus:ring-primary cursor-pointer shrink-0" />
-                    <div class="flex flex-col min-w-0 flex-1">
+                  <label class="simulator-addon-card cursor-pointer relative flex items-center justify-between gap-3 p-3.5 rounded-xl transition-all min-h-[64px] select-none">
+                    <input type="checkbox" data-addon-choice="modulo-tef" class="sr-only" />
+                    <div class="flex flex-col min-w-0 flex-1 pr-2">
                       <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-bold text-on-surface">Módulo TEF POS</span>
-                        <span class="text-xs font-bold text-secondary shrink-0">+R$ 80/mês</span>
+                        <span class="addon-price-badge text-xs font-bold text-on-surface-variant shrink-0">+R$ 80/mês</span>
                       </div>
-                      <span class="text-xs text-on-surface-variant mt-0.5">Integração multi-bandeiras com pinpad no caixa</span>
+                      <span class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">Conexão multi-bandeiras com pinpad no caixa</span>
                     </div>
+                    <div class="cyber-toggle shrink-0" aria-hidden="true"><div class="cyber-toggle-thumb"></div></div>
                   </label>
 
                   <!-- Addon 6: 2 Usuários Extras -->
-                  <label class="cursor-pointer relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors border border-surface-variant/30 min-h-[56px] select-none">
-                    <input type="checkbox" data-addon-choice="usuario-extra" class="w-5 h-5 mt-0.5 rounded accent-[#f5b700] text-primary focus:ring-primary cursor-pointer shrink-0" />
-                    <div class="flex flex-col min-w-0 flex-1">
+                  <label class="simulator-addon-card cursor-pointer relative flex items-center justify-between gap-3 p-3.5 rounded-xl transition-all min-h-[64px] select-none">
+                    <input type="checkbox" data-addon-choice="usuario-extra" class="sr-only" />
+                    <div class="flex flex-col min-w-0 flex-1 pr-2">
                       <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-bold text-on-surface">2 Usuários Extras</span>
-                        <span class="text-xs font-bold text-primary shrink-0">+R$ 8/mês</span>
+                        <span class="addon-price-badge text-xs font-bold text-on-surface-variant shrink-0">+R$ 8/mês</span>
                       </div>
-                      <span class="text-xs text-on-surface-variant mt-0.5">Acessos simultâneos adicionais para a equipe</span>
+                      <span class="text-xs text-on-surface-variant mt-0.5 line-clamp-1">Acessos simultâneos adicionais para a equipe</span>
                     </div>
+                    <div class="cyber-toggle shrink-0" aria-hidden="true"><div class="cyber-toggle-thumb"></div></div>
                   </label>
 
                 </div>
@@ -1111,60 +1132,72 @@
 
             <!-- Coluna do Resumo Dinâmico em Tempo Real (5 colunas, Sticky no Desktop) -->
             <div class="lg:col-span-5 sticky top-24">
-              <div class="border-beam-card shadow-2xl relative">
-                <div class="border-beam-inner p-space-md sm:p-space-lg flex flex-col gap-space-md">
+              <div class="simulator-summary-card relative overflow-hidden shadow-2xl">
+                <!-- Halo de fundo cibernético -->
+                <div class="pointer-events-none absolute -top-12 -right-12 w-48 h-48 rounded-full bg-[#f5b700]/10 blur-3xl"></div>
+                <div class="pointer-events-none absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-[#00e5ff]/10 blur-3xl"></div>
+
+                <div class="p-space-md sm:p-space-lg flex flex-col gap-space-md relative z-10">
                   
                   <!-- Topo do Resumo -->
-                  <div class="flex items-center justify-between border-b border-surface-variant/30 pb-3">
+                  <div class="flex items-center justify-between border-b border-white/10 pb-3">
                     <div class="flex flex-col">
-                      <span class="text-xs uppercase tracking-wider text-secondary font-bold">Proposta Dinâmica</span>
-                      <h4 class="font-title-sm text-title-sm text-on-surface font-black" id="simulador-resumo-segmento">Varejo &amp; Lojas</h4>
+                      <span class="text-[11px] uppercase tracking-widest text-[#f5b700] font-black">Proposta Dinâmica</span>
+                      <h4 class="font-title-sm text-title-sm text-on-surface font-black" id="simulador-resumo-segmento">MEI Inicial Essencial</h4>
                     </div>
-                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary/15 border border-tertiary/30 text-tertiary text-xs font-bold animate-pulse">
-                      <span class="w-2 h-2 rounded-full bg-tertiary"></span> Ativação Imediata
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
+                      <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      Ativação Imediata
                     </span>
                   </div>
 
                   <!-- Detalhes do Plano Base -->
-                  <div class="flex flex-col gap-1 p-3 rounded-xl bg-surface-container">
+                  <div class="flex flex-col gap-1 p-3.5 rounded-xl bg-surface-container/80 border border-white/5">
                     <span class="text-xs text-on-surface-variant font-medium">Plano Base Recomendado:</span>
-                    <span class="text-xs sm:text-sm text-on-surface font-bold" id="simulador-resumo-base">Plano Venda+ Simples Comercial (R$ 169,00)</span>
+                    <span class="text-xs sm:text-sm text-on-surface font-bold text-[#f5b700]" id="simulador-resumo-base">Plano Venda+ MEI Essencial (R$ 159,00)</span>
                   </div>
 
                   <!-- Módulos Opcionais Ativos -->
                   <div class="flex flex-col gap-1.5">
-                    <span class="text-xs text-on-surface-variant font-medium">Módulos Opcionais Inclusos:</span>
-                    <div class="flex flex-wrap gap-1.5 min-h-[32px]" id="simulador-lista-selecionados">
-                      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-secondary text-xs font-medium border border-secondary/20">
-                        <span class="material-symbols-outlined text-[14px]">check</span> Relatórios no WhatsApp
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs text-on-surface-variant font-medium">Módulos Opcionais Inclusos:</span>
+                      <span class="text-[11px] text-[#00e5ff] font-bold" id="simulador-modulos-count">1 módulo ativo</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 min-h-[36px]" id="simulador-lista-selecionados">
+                      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-[#00e5ff] text-xs font-semibold border border-[#00e5ff]/30 shadow-[0_0_10px_rgba(0,229,255,0.15)]">
+                        <span class="material-symbols-outlined text-[14px]">check_circle</span> Relatórios WhatsApp
                       </span>
                     </div>
                   </div>
 
-                  <!-- Badge de Desconto Progressivo -->
-                  <div id="simulador-badge-desconto" class="hidden items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-tertiary/20 to-tertiary/10 border border-tertiary/30 text-tertiary text-xs font-bold">
-                    <span class="material-symbols-outlined text-[16px]">verified</span>
-                    <span>Economia de R$ 20,00/mês aplicada</span>
-                  </div>
-
                   <!-- Preço Total em Grande Destaque -->
-                  <div class="flex flex-col p-4 rounded-xl bg-surface-container-lowest border border-primary/30 shadow-inner">
-                    <span class="text-xs uppercase text-on-surface-variant font-semibold">Investimento Mensal Estimado</span>
-                    <div class="flex items-baseline gap-1 mt-1">
-                      <span class="font-display-lg text-display-lg text-primary font-black" id="simulador-preco-final">R$ 219,00</span>
+                  <div class="flex flex-col p-4 sm:p-5 rounded-xl bg-[#070b14]/90 border border-[#f5b700]/30 shadow-inner relative overflow-hidden">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs uppercase text-on-surface-variant font-bold tracking-wider">Investimento Mensal Estimado</span>
+                      <span class="text-[10px] uppercase font-black text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">Sem Fidelidade</span>
+                    </div>
+                    <div class="flex items-baseline gap-1 mt-2">
+                      <span class="text-3xl sm:text-4xl font-black text-[#f5b700] tracking-tight transition-all" id="simulador-preco-final">R$ 219,00</span>
                       <span class="text-xs text-on-surface-variant font-medium">/mês</span>
                     </div>
-                    <span class="text-xs text-on-surface-variant mt-1">Sem taxa de adesão oculta • Sem carência contratual</span>
+                    <div class="flex items-center gap-2 mt-2 pt-2 border-t border-white/5 text-[11px] text-on-surface-variant">
+                      <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-emerald-400">check</span> Sem taxa de adesão</span>
+                      <span>•</span>
+                      <span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-emerald-400">check</span> Suporte incluso</span>
+                    </div>
                   </div>
 
                   <!-- CTA de Conversão Direta para o WhatsApp -->
                   <div class="flex flex-col gap-2 pt-1">
-                    <a id="simulador-whatsapp-btn" class="btn-shimmer w-full inline-flex items-center justify-center gap-2 py-3.5 px-space-md rounded-xl bg-gradient-to-r from-[#f5b700] via-[#ffd033] to-[#f5b700] text-on-primary font-title-sm text-title-sm font-black glow-gold transition-all shadow-xl" href="#" rel="noopener noreferrer" target="_blank">
+                    <a id="simulador-whatsapp-btn" class="simulator-cta-btn btn-shimmer w-full inline-flex items-center justify-center gap-2 py-3.5 px-space-md rounded-xl text-black font-extrabold text-sm sm:text-base uppercase tracking-wider glow-gold transition-all" href="#" rel="noopener noreferrer" target="_blank">
                       <span class="material-symbols-outlined text-[20px]">chat</span>
                       <span>Contratar Pacote Simulado</span>
                     </a>
                     <span class="text-center text-xs text-on-surface-variant">
-                      ✓ Teste Grátis Incluso • Suporte Técnico Humanizado
+                      ✓ Teste Grátis Incluso • Ativação Direta com Especialista
                     </span>
                   </div>
 
