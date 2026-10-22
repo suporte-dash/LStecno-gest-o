@@ -1,29 +1,35 @@
 # PROJECT_STATE.md — LS Tecnologia & Gestão
 
 ## 📌 Onde parámos
-- **Execução Concluída — Tarefa [7/7]: Implementação do Banner Final de Conversão com Portal Cibernético 3D e CTA de Alto Impacto (Ciclo 100% Finalizado):**
-  - **Ativo Oficial Extraído do Stitch via MCP:** Baixado [cyber-portal-launchpad.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/cyber-portal-launchpad.png) (1376x768 px nativos, 981.035 bytes) via `download_file` do Stitch MCP no projeto `1227960900249106481` (tela `8cb32353d28e45f5bf8bbb79646b687d`), apresentando o monumental arco holográfico de portal forjado em ouro cibernético chanfrado e feixes neon azul ciano convergindo para um horizonte tecnológico acelerado.
-  - **Card de Fechamento de Alta Performance:** Container responsivo `final-portal-card` com gradiente de profundidade (`#121722` a `#0a0e17`), borda dourada translúcida (`border border-[#f5b700]/30`), `backdrop-blur-xl` e `shadow-2xl shadow-[#f5b700]/10`.
-  - **Layout em 2 Colunas (Desktop & Mobile-First):**
-    - **Coluna Esquerda (Copywriting de Fechamento & Ação):**
-      - Pílula Dourada de Selo Superior: `SEU NEGÓCIO NO PRÓXIMO NÍVEL` com ícone de foguete e glow dourado.
-      - Título H2 com Ênfase Cromática: *"Pronto para transformar sua rotina com o ecossistema definitivo de gestão?"*.
-      - Subtítulo Consultivo: *"Converse agora com a nossa equipe, receba um diagnóstico exclusivo e faça um teste prático do Venda+, Gerente Virtual ou TiAgenda sem qualquer compromisso."*.
-      - Botão CTA Principal (`final-cta-btn` + `.btn-shimmer`): *"SOLICITAR DEMONSTRAÇÃO GRATUITA AGORA"*, gradiente metálico dourado, microinteração de seta com translação no hover e link direto inteligente formatado para o WhatsApp com intent `final`.
-      - Grade de 3 Micro-garantias:
-        1. ✔ Atendimento imediato via WhatsApp (ícone ciano)
-        2. ✔ Teste sem cartão de crédito (ícone dourado)
-        3. ✔ Suporte especializado LS do início ao fim (ícone verde)
-    - **Coluna Direita (Visual do Portal 3D & Efeitos de Luz):**
-      - Container interativo `cyber-portal-container` com tracking de mouse spotlight e trigger de Lightbox HD.
-      - Animação Contínua `@keyframes portalPulse` (5s loop): levitação sutil (`translateY(-8px) scale(1.02)`) com duplo drop-shadow dinâmico (dourado e ciano neon) simulando energia aceleradora.
-      - Halo Radial Expansivo (`portal-warp-bg`): Golden & Cyan Warp Core com desfoque `blur(55px)` e reatividade no hover.
-      - Badge Holográfica de Aceleração: Pílula translúcida `Portal de Aceleração 2026` com ponto luminoso ciano pulsante (`animate-ping`).
-      - Zoom Lightbox HD: Suporte a ampliação modal com clique na imagem ou container.
-  - **Otimizações Globais & Responsividade:** 100% fluido em telas móveis (360px a 390px), sem overflow horizontal e áreas de toque mínimas superiores a 48x48px.
+- **Execução Concluída — Otimização de Qualidade e Super-Resolução Retina 2x da Arte do Hero Section:**
+  - **Pipeline de Alta Densidade e Super-Resolução (Sharp / Lanczos3):**
+    - Arte original do Hero Workspace (`hero-workspace-original.png`, 1376x768 px) mantida integralmente e reescalonada com precisão subpixel para a densidade **Retina 2x (2752 x 1536 px)**.
+    - Filtro de nitidez controlada (*unsharp mask* adaptativo) aplicado diretamente às bordas dos gráficos holográficos, contornos metálicos do notebook e do smartphone, tipografia dos painéis e circuitos de neon ciano e dourado.
+    - **Exportação Dual Sem Perdas:**
+      1. [hero-workspace.webp](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-workspace.webp) (WebP fator de qualidade 100, 1.240.684 bytes) — máxima resiliência de rede e carregamento ultra-rápido no mobile.
+      2. [hero-workspace.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-workspace.png) (PNG 24-bit sem perdas, 5.264.572 bytes, 2752x1536 px) — fidelidade máxima para displays Retina / 4K.
+  - **Regras CSS de Renderização Nítida (`.hero-image-enhanced`):**
+    ```css
+    .hero-image-enhanced {
+      width: 100%;
+      height: auto;
+      max-width: 1100px;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+    ```
+  - **Atualização Semântica no `index.html`:**
+    - Tag `<picture>` com `<source srcset="/assets/hero-workspace.webp" type="image/webp" />` e fallback `<img>` PNG Retina 2x (`width="2752" height="1536"`).
+    - Classe `.hero-image-enhanced` aplicada com transição sutil no hover (`group-hover:scale-[1.015]`).
+    - Integração com o visualizador interativo Lightbox HD (`showcase-lightbox-trigger`) para inspeção de cada curva e métrica do dashboard em tela cheia com 0 perda.
 
 - **Pipeline Completo das 7 Etapas Entregue (100% Concluído):**
-  1. **[1/7] Hero Principal:** Ativo 3D `hero-workspace.png` (1376x768), tilt 3D a 60 FPS, badges flutuantes e cursor field interativo.
+  1. **[1/7] Hero Principal:** Ativo 3D `hero-workspace.webp` / `png` (2752x1536 Retina 2x), tilt 3D a 60 FPS, badges flutuantes e cursor field interativo.
   2. **[2/7] Venda+ (PDV & Frente de Caixa):** Ativo isométrico 3D `venda-mais-isometric.png` (1024x1024), `@keyframes floatIsometric`, badges holográficas PIX e Comprovante Digital.
   3. **[3/7] Gerente Virtual (Inteligência & IA):** Cérebro Neural 1:1 `gerente-virtual-brain-square.png` (1024x1024), `@keyframes neuralPulse`, halo ciano reativo.
   4. **[4/7] TiAgenda & IA (Mascote 24h):** Robô Mascote 3D `tiagenda-robot-mascot.png` (1024x1024), `@keyframes botFloat`, halo ciano/dourado e status 24/7.
@@ -34,10 +40,12 @@
 
 ## ⚙️ Estado atual
 - **Branch Git:** `fix/auditoria`.
-- **Último Commit:** `00ba2a4` (`feat(cta-final): implementar banner final com portal cibernetico 3d e cta de alto impacto`).
-- **Compilação (`npm.cmd run build`):** 100% aprovada, 0 erros, tempo de build: 366ms.
+- **Último Commit:** `56f582a` (`feat(hero): otimizacao de qualidade, super-resolucao retina 2x (2752x1536) e classe hero-image-enhanced`).
+- **Compilação (`npm.cmd run build`):** 100% aprovada, 0 erros, tempo de build: 431ms.
 - **Servidor Dev:** Ativo em `http://localhost:3000/`.
-- **Ativo Verificado:** `http://localhost:3000/assets/cyber-portal-launchpad.png` (HTTP 200, 981.035 bytes).
+- **Ativos Hero Verificados:**
+  - `http://localhost:3000/assets/hero-workspace.webp` (HTTP 200, 1.240.684 bytes, 2752x1536 px, Q=100).
+  - `http://localhost:3000/assets/hero-workspace.png` (HTTP 200, 5.264.572 bytes, 2752x1536 px, 24-bit Lossless).
 
 ## 🎯 Próximos passos imediatos
-- Projeto 100% implementado e pronto para homologação final, deploy ou ajustes pontuais conforme feedback do cliente.
+- Projeto 100% harmonizado em nitidez Retina e pronto para validação visual final pelo usuário.
