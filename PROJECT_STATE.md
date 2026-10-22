@@ -1,40 +1,29 @@
 # PROJECT_STATE.md — LS Tecnologia & Gestão
 
 ## 📌 Onde parámos
-- **Execução Concluída — Refatoração e Implementação do Novo Split Hero de Alta Conversão:**
-  - **Arquitetura Split 2 Colunas Integrada no [index.html](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html):**
-    - **Coluna Esquerda (Lg: 7 colunas):**
-      - Header da Marca: Logo oficial do Lobo Alfa (`/assets/logo-ls.png`) com aro dourado, drop-shadow neon (`drop-shadow-[0_0_15px_rgba(245,183,0,0.4)]`) e tipografia de marca.
-      - Badge de Alto Impacto: `🚀 Seu negócio no próximo nível` com borda e glow dourado.
-      - H1 de Alto Impacto: Tipografia com gradiente metálico branco-prata e ouro com drop-shadow cibernético (`TECNOLOGIA QUE IMPULSIONA O SEU NEGÓCIO`).
-      - Subtítulo em Ciano Elétrico: `Frente de Caixa Rápida, Gestão na Nuvem e Atendimento Automático por IA`.
-      - Descrição comercial direta focada em agilidade fiscal (NFC-e), operação offline e controle financeiro mobile.
-      - Botões de Ação (CTAs) na Primeira Dobra:
-        - Primário: Botão WhatsApp dourado de alta conversão integrado com o número oficial (`5591982221400`), parâmetros de rastreamento (`data-whatsapp-intent="hero"`, `data-track="hero_primary_cta_click"`) e área de toque ergonômica mínima de 48px.
-        - Secundário: Conhecer Todos os Sistemas (`#sistemas`) em Dark Slate com borda ciano e efeito de hover.
-    - **Coluna Direita (Lg: 5 colunas):**
-      - Vitrine Tecnológica 3D Dinâmica sem molduras duras (`object-contain`), integrando a arte conceitual do hardware flutuante (`/assets/hero-showcase.webp` e `/assets/hero-showcase.png`) com drop-shadow suave (`drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]`) e zoom sutil no hover (`group-hover:scale-105`).
-      - Tags Holográficas Flutuantes: "Dados em tempo real" (com pulso ciano) e "IA & WhatsApp 24/7" (com ponto esmeralda).
-    - **Dock Inferior (4 Pilares de Soluções com Glassmorphism):**
-      - Cards integrados como âncoras inteligentes de navegação com scroll suave para as seções correspondentes:
-        1. *Automação Total* (`#venda-mais`)
-        2. *Nuvem Blindada* (`#seguranca`)
-        3. *Relatórios no Zap* (`#gerente-virtual`)
-        4. *Atendente com IA* (`#tiagenda`)
-  - **Otimização de Assets e Compatibilidade:**
-    - [logo-ls.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/logo-ls.png) formatado como PNG 24-bit limpo (512x512).
-    - [hero-showcase.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-showcase.png) e [hero-showcase.webp](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-showcase.webp) (2752x1536 px) servidos via tag `<picture>` com `fetchpriority="high"`.
-    - [cursor-field.js](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/src/scripts/cursor-field.js) compatibilizado com `id="hero"` e `id="hero-section"`.
+- **Execução Concluída — Palco Holográfico da Nova Logo e Remoção de Redundância no Hero:**
+  - **Coluna da Esquerda Reorganizada no [index.html](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html):**
+    - Bloco de logo redundante removido do topo da coluna esquerda. A coluna agora inicia diretamente com o Badge de Impacto (`🚀 Seu negócio no próximo nível`), mantendo foco e clareza visual imediatos na proposta de valor.
+  - **Coluna da Direita: Reator Holográfico Cibernético 3D com a Nova Logo:**
+    - Substituída a vitrine anterior por um palco holográfico cibernético exclusivo para a nova marca.
+    - Aura de luz volumétrica com backlight dual neon (Dourado `#f5b700` e Ciano `#00e5ff`).
+    - Anéis orbitais cibernéticos com rotação suave em profundidade (`animate-[spin_60s_linear_infinite]`).
+    - Tags holográficas orbitais ("Dados em tempo real" e "IA & WhatsApp 24/7").
+    - Pedestal holográfico de vidro escuro (`backdrop-blur-2xl`, bordas douradas e sombras atmosféricas).
+    - Nova logo apresentada com levitação magnética fluida (`animate-[float_6s_ease-in-out_infinite]`), escala suave no hover e selo de ecossistema integrado no rodapé do pedestal.
+  - **Processamento e Otimização da Imagem com Sharp:**
+    - Master original processado e salvo em [logo-hero-master.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/logo-hero-master.png) (1024x1024 px, 4 canais, transparência externa perfeitamente recortada com canal alfa).
+    - Versão WebP de alta fidelidade gerada em [logo-hero-master.webp](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/logo-hero-master.webp) (122.590 bytes, 1024x1024 px, `quality: 95, effort: 6`, canal alfa ativo).
+    - Adicionado `@keyframes float` em [main.css](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/src/styles/main.css) para levitação a 60 FPS.
 
 ## ⚙️ Estado atual
 - **Branch Git:** `fix/auditoria`.
-- **Compilação (`npm.cmd run build`):** 100% aprovada, 0 erros, tempo de build: 467ms.
+- **Compilação (`npm.cmd run build`):** 100% aprovada, 0 erros, tempo de build: 463ms.
 - **Servidor Dev:** Ativo em `http://localhost:3000/`.
-- **Ativos Hero Verificados:**
-  - `public/assets/logo-ls.png` (512x512 px, PNG).
-  - `public/assets/hero-showcase.webp` (2752x1536 px, WebP de alta fidelidade).
-  - `public/assets/hero-showcase.png` (2752x1536 px, PNG 24-bit Lossless).
+- **Ativos Hero Verificados via HTTP (200 OK):**
+  - `http://localhost:3000/assets/logo-hero-master.webp` (HTTP 200, 122.590 bytes, 1024x1024 px, Alpha Channel).
+  - `http://localhost:3000/assets/logo-hero-master.png` (HTTP 200, 824.467 bytes, 1024x1024 px, PNG 32-bit RGBA).
 
 ## 🎯 Próximos passos imediatos
-- Realizar validação pelo usuário no navegador local (`http://localhost:3000/`).
-- Homologar as microinterações e transições de tela no dispositivo mobile e desktop.
+- Validar a nova ambientação da logo no navegador (`http://localhost:3000/`).
+- Prosseguir com eventuais ajustes estéticos solicitados pelo cliente.
