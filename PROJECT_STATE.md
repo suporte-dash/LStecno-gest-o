@@ -1,15 +1,20 @@
 # PROJECT_STATE.md — LS Tecnologia & Gestão
 
 ## 📌 Onde parámos
-- **Execução Concluída — Reordenação Estrutural da Seção Hero (`#hero-section`):**
-  - **Fluxo Visual Cinematográfico:** O mockup visual 3D (`hero-tilt-container` com arte Retina 2x de 2752x1536 px, badges flutuantes de dados e 3D tilt interativo a 60 FPS) foi posicionado imediatamente abaixo do título principal H2/H1 (`TECNOLOGIA QUE IMPULSIONA O SEU NEGÓCIO`), conferindo impacto visual instantâneo na primeira dobra.
-  - **Posicionamento de Fechamento de Proposta:** A subheadline comercial (`Frente de Caixa Rápida, Gestão na Nuvem e Atendimento Automático por IA`), o parágrafo explicativo e os CTAs duplos (`Testar grátis no WhatsApp` e `Conhecer Todos os Sistemas`) foram reposicionados logo abaixo do mockup 3D, criando uma ponte fluida de conversão imediatamente antes da grade de 4 diferenciais interativos (`#venda-mais`, `#seguranca`, `#gerente-virtual`, `#tiagenda`).
-  - **Cadência de Espaçamento e Ergonomia:** Margens verticais proporcionais preservadas em desktop e mobile, com transição limpa para os 4 cards de diferenciais.
+- **Execução Concluída — Substituição da Arte do Hero pela Nova Versão Tratada do Cliente:**
+  - **Backup Preventivo Realizado:** Ativos anteriores copiados com sucesso para [hero-workspace-backup.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-workspace-backup.png) (5.264.572 bytes) e [hero-workspace-backup.webp](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-workspace-backup.webp) (1.240.684 bytes).
+  - **Processamento da Nova Arte Tratada:**
+    - Nova imagem oficial integrada com sucesso em [hero-workspace.png](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-workspace.png) (909.472 bytes, 1024x576 px, Proporção 16:9 perfeita / 1.778).
+    - Pipeline com Sharp executado para gerar a versão WebP otimizada [hero-workspace.webp](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/public/assets/hero-workspace.webp) (191.910 bytes, ~191 KB com `quality: 95, effort: 6`), proporcionando carregamento instantâneo em conexões móveis sem qualquer degradação de nitidez nos gráficos, tipografia e circuitos de neon.
+  - **Sincronização no [index.html](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html):**
+    - Atributos `width="1024"` e `height="576"` calibrados na tag `<img>`.
+    - Proporção preservada em `aspect-[16/9]` no container pai.
+    - Suporte a ampliação de alta definição via Lightbox HD (`data-lightbox-src="/assets/hero-workspace.png"`).
 
 - **Execuções Anteriores Concluídas:**
-  - **Refinamentos Cirúrgicos de UX/UI:** 4 âncoras inteligentes nos diferenciais do Hero, badges cibernéticos escuros de preço na Seção 02 (eliminando canibalização de CTAs), tipografia de 12px no badge "Sem Fidelidade" do simulador e respiro inferior no rodapé mobile (`pb-28 sm:pb-space-xl`).
-  - **Otimização Retina 2x do Hero Workspace:** Sharp / Lanczos3 (2752x1536 px), WebP Q=100 (1.2 MB) e PNG 24-bit (5.2 MB) sem perdas, com classe `.hero-image-enhanced`.
-  - **Pipeline Completo das 7 Etapas (100% Concluído):**
+  - **Reordenação do Hero:** Mockup 3D posicionado logo abaixo do título H1, com subheadline, explicação e CTAs posicionados entre o mockup e a grade de 4 diferenciais interativos.
+  - **Refinamentos Cirúrgicos de UX/UI:** 4 âncoras inteligentes nos diferenciais do Hero, badges cibernéticos escuros de preço na Seção 02, tipografia de 12px no badge "Sem Fidelidade" do simulador e respiro inferior no rodapé mobile (`pb-28 sm:pb-space-xl`).
+  - **Pipeline Completo das 7 Etapas Entregue (100% Concluído):**
     1. Hero Principal (Setup 3D Workspace, Tilt 60 FPS, Badges e Âncoras).
     2. Venda+ (Ativo 3D Isométrico, Badges PIX e Comprovante).
     3. Gerente Virtual (Cérebro Neural 1:1, Pulso e Halo Ciano).
@@ -21,9 +26,12 @@
 
 ## ⚙️ Estado atual
 - **Branch Git:** `fix/auditoria`.
-- **Último Commit:** `d40f8e0` (`feat(hero): reposicionar mockup 3d logo abaixo do titulo e mover subheadline e ctas para baixo do mockup`).
-- **Compilação (`cmd /c "npm run build"`):** 100% aprovada, 0 erros, tempo de build: 498ms.
+- **Último Commit:** `9d2ce80` (`feat(hero): substituir imagem do hero pela nova versao tratada (1024x576) e gerar webp otimizado com sharp`).
+- **Compilação (`npm.cmd run build`):** 100% aprovada, 0 erros, tempo de build: 418ms.
 - **Servidor Dev:** Ativo em `http://localhost:3000/`.
+- **Ativos Hero Verificados via HTTP:**
+  - `http://localhost:3000/assets/hero-workspace.webp` (HTTP 200, 191.910 bytes, 1024x576 px, Q=95).
+  - `http://localhost:3000/assets/hero-workspace.png` (HTTP 200, 909.472 bytes, 1024x576 px, 24-bit Lossless).
 
 ## 🎯 Próximos passos imediatos
-- Projeto atualizado e pronto para validação visual pelo cliente no navegador.
+- Projeto 100% calibrado com a nova arte oficial tratada do Hero e pronto para homologação final.
