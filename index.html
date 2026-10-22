@@ -855,26 +855,63 @@
                 </div>
               </div>
 
-              <div class="lg:col-span-5 flex flex-col items-center justify-center p-space-md sm:p-space-lg rounded-2xl bg-surface-container-lowest/95 shadow-2xl border border-primary/30">
-                <!-- Panfleto Oficial Combo MEI (Proporção Nativa Quadrada 1:1 Sem Cortes) -->
-                <div class="w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden mb-space-md border border-primary/40 bg-surface-floor p-1.5 shadow-[0_8px_30px_rgba(245,183,0,0.18)] relative group cursor-pointer showcase-lightbox-trigger" data-lightbox-src="/assets/combo-mei-showcase.jpg" data-lightbox-title="Combo MEI de Sucesso: Venda+ e Gerente Virtual">
-                  <img src="/assets/combo-mei-showcase.jpg" alt="Combo MEI de Sucesso com tela de PDV e celular" class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  <div class="absolute bottom-2 inset-x-2 py-1 px-2 rounded-lg bg-surface-floor/85 backdrop-blur-md border border-primary/20 flex items-center justify-center gap-1 opacity-90 group-hover:opacity-100 transition-opacity">
-                    <span class="material-symbols-outlined text-[13px] text-primary">zoom_in</span>
-                    <span class="text-[9px] font-bold text-on-surface uppercase tracking-wider">Ampliar Oferta</span>
+              <div class="lg:col-span-5 flex flex-col items-center justify-center p-space-md sm:p-space-lg rounded-2xl bg-surface-container-lowest/95 shadow-2xl border border-primary/30 relative overflow-hidden golden-voucher-container group">
+                <!-- Halo Dourado de Fundo Reativo -->
+                <div class="golden-halo-bg"></div>
+
+                <!-- Container do Voucher 3D Dourado (Retina 2.5x: 1024px quadrada 1:1) -->
+                <div class="relative w-full max-w-[300px] lg:max-w-[380px] xl:max-w-[420px] aspect-square flex items-center justify-center mx-auto my-2 cursor-pointer showcase-lightbox-trigger z-10" data-lightbox-src="/assets/combo-mei-golden-badge.png" data-lightbox-title="Combo MEI de Sucesso — Voucher VIP 3D Dourado e Bundle Tecnológico">
+                  
+                  <!-- Imagem Voucher 3D com Levitação Dourada e Aceleração por GPU -->
+                  <div class="w-full aspect-square rounded-2xl overflow-hidden relative flex items-center justify-center p-2">
+                    <img
+                      src="/assets/combo-mei-golden-badge.png"
+                      alt="Voucher VIP 3D Dourado do Combo MEI de Sucesso com maquininha POS, chip IA e WhatsApp"
+                      class="golden-voucher-asset w-full h-full object-cover aspect-square select-none pointer-events-none rounded-xl"
+                      width="1024"
+                      height="1024"
+                      loading="lazy"
+                    />
+
+                    <!-- Pílula Holográfica de Urgência VIP ("Voucher VIP Oficial") -->
+                    <div class="animate-badge-pulse-1 absolute top-3 right-3 sm:top-4 sm:right-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full backdrop-blur-md bg-[#0a0e17]/85 border border-[#f5b700]/50 shadow-lg text-xs font-semibold text-[#f5b700]">
+                      <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                      </span>
+                      <span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+                      <span>Voucher VIP Oficial</span>
+                    </div>
+
+                    <!-- Botão Discreto de Toque para Ampliar / Lightbox -->
+                    <div class="absolute bottom-2 right-2 z-10 py-0.5 px-2 rounded-md bg-surface-floor/85 backdrop-blur-md border border-primary/20 flex items-center gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+                      <span class="material-symbols-outlined text-[13px] text-primary">zoom_in</span>
+                      <span class="text-xs font-bold text-on-surface uppercase tracking-wider">Ampliar</span>
+                    </div>
                   </div>
                 </div>
-                <div class="flex flex-col items-center w-full">
-                  <!-- TODO(cliente): O preço 'De R$ 258,00' não bate com a soma dos módulos listados (MEI 159 + WhatsApp 60 + PIX 80 = 299). Confirmar a origem do valor 'de' ou manter sem alteração de valores no código -->
-                  <span class="font-body-sm text-body-sm text-on-surface-variant line-through">De R$ 258,00/mês</span>
-                  <div class="flex items-baseline gap-space-xs mt-1">
-                    <span class="font-body-sm text-body-sm text-secondary font-semibold">Por apenas</span>
-                    <span class="font-display-lg text-display-lg text-primary font-black">R$ 239,90</span>
-                    <span class="font-body-md text-body-md text-on-surface-variant">/mês</span>
+
+                <!-- Bloco de Preço com Efeito Shimmer Metálico Dourado e Destaque de Economia -->
+                <div class="flex flex-col items-center w-full z-10 mt-2">
+                  <div class="shimmer-badge relative overflow-hidden w-full flex flex-col items-center py-3 px-4 rounded-xl bg-surface-container/80 border border-primary/30 mb-space-sm">
+                    <!-- TODO(cliente): O preço 'De R$ 258,00' não bate com a soma dos módulos listados (MEI 159 + WhatsApp 60 + PIX 80 = 299). Confirmar a origem do valor 'de' ou manter sem alteração de valores no código -->
+                    <span class="font-body-sm text-body-sm text-on-surface-variant line-through">De R$ 258,00/mês</span>
+                    <div class="flex items-baseline gap-space-xs my-1">
+                      <span class="font-body-sm text-body-sm text-secondary font-semibold">Por apenas</span>
+                      <span class="font-display-lg text-display-lg text-primary font-black tracking-tight">R$ 239,90</span>
+                      <span class="font-body-md text-body-md text-on-surface-variant">/mês</span>
+                    </div>
+                    <!-- Badge Pulsante de Economia ("Você Economiza R$ 18,10 mensais") -->
+                    <div class="animate-pulse inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/15 border border-tertiary/40 text-tertiary font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-[0_0_15px_rgba(90,249,135,0.2)]">
+                      <span class="material-symbols-outlined text-[16px]">savings</span>
+                      <span>Você economiza R$ 18,10 mensais</span>
+                    </div>
                   </div>
-                  <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider mb-space-md font-bold text-center">Economia direta de R$ 18,10 mensais</span>
-                  <a data-whatsapp-intent="comboMei" data-track="combo_mei_cta_click" class="btn-shimmer w-full text-center py-space-sm px-space-md rounded-xl bg-gradient-to-r from-[#f5b700] via-[#ffd033] to-[#f5b700] text-on-primary font-title-sm text-title-sm font-black glow-gold transition-all" href="https://wa.me/5591982221400?text=Quero%20aproveitar%20o%20Combo%20MEI%20de%20Sucesso" rel="noopener noreferrer" target="_blank">
-                    Garantir Combo com Desconto
+
+                  <!-- Botão de Ação CTA com Gradiente Dourado Cibernético e Efeito de Elevação -->
+                  <a data-whatsapp-intent="comboMei" data-track="combo_mei_cta_click" class="combo-mei-cta-btn w-full text-center py-3 px-space-md rounded-xl bg-gradient-to-r from-[#f5b700] via-[#ffd000] to-[#d99b00] text-black font-extrabold uppercase tracking-wide shadow-[0_10px_25px_rgba(245,183,0,0.35)] transition-all duration-300 flex items-center justify-center gap-2" href="https://wa.me/5591982221400?text=Quero%20aproveitar%20o%20Combo%20MEI%20de%20Sucesso" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-[20px]">local_activity</span>
+                    <span>Garantir Combo com Desconto</span>
                   </a>
                 </div>
               </div>

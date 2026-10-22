@@ -211,6 +211,26 @@
   }
 }
 
+@keyframes goldenFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 15px 30px rgba(245, 183, 0, 0.35)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.2));
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+    filter: drop-shadow(0 25px 45px rgba(245, 183, 0, 0.55)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    transform: translateX(-100%) skewX(-25deg);
+  }
+  20%, 100% {
+    transform: translateX(200%) skewX(-25deg);
+  }
+}
+
 @keyframes badge-pulse-subtle-1 {
   0%, 100% {
     transform: scale(1);
@@ -460,6 +480,61 @@
 
   .tiagenda-container:hover .robot-halo-bg {
     opacity: 1;
+  }
+
+  /* 4.4 LEVITAÇÃO DOURADA & SHIMMER METÁLICO (COMBO MEI) */
+  .golden-voucher-asset {
+    animation: goldenFloat 4s ease-in-out infinite;
+    will-change: transform, filter;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+  }
+
+  .golden-voucher-container:hover .golden-voucher-asset {
+    filter: drop-shadow(0 28px 55px rgba(245, 183, 0, 0.65)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.5));
+  }
+
+  .golden-halo-bg {
+    position: absolute;
+    inset: -15%;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(245, 183, 0, 0.22) 0%, rgba(255, 208, 0, 0.1) 45%, transparent 72%);
+    filter: blur(44px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.65;
+    transition: opacity 0.5s ease;
+    transform: translateZ(0);
+  }
+
+  .golden-voucher-container:hover .golden-halo-bg {
+    opacity: 1;
+  }
+
+  .shimmer-badge {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    animation: goldShimmer 5s infinite;
+    pointer-events: none;
+  }
+
+  .combo-mei-cta-btn:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 183, 0, 0.45);
   }
 
   .animate-badge-pulse-1 {
