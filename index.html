@@ -167,9 +167,27 @@
           <!-- Mockup Visual Principal com 3D Tilt e Badges Flutuantes -->
           <div class="hero-tilt-container relative w-full max-w-5xl mb-space-xl">
             <div class="hero-tilt-card relative w-full rounded-2xl bg-surface-container/80 p-2 sm:p-space-sm backdrop-blur-xl border border-[rgba(245,183,0,0.25)] shadow-[0_20px_50px_-10px_rgba(0,229,255,0.15),0_0_30px_rgba(245,183,0,0.1)]">
-              <div class="relative overflow-hidden rounded-xl bg-surface-floor aspect-[16/9] w-full">
-                <img class="w-full h-full object-cover" width="1376" height="768" fetchpriority="high" alt="Ecossistema Tecnológico Completo LS Tecnologia &amp; Gestão com Dashboard de Vendas em tempo real em laptop e smartphone" src="/assets/hero-workspace.png" />
+              <div class="relative overflow-hidden rounded-xl bg-surface-floor aspect-[16/9] w-full flex items-center justify-center showcase-lightbox-trigger cursor-pointer group"
+                   data-lightbox-src="/assets/hero-workspace.png"
+                   data-lightbox-title="Ecossistema Tecnológico Completo LS Tecnologia &amp; Gestão: Dashboard em Tempo Real e Gestão Integrada"
+                   role="button"
+                   tabindex="0"
+                   aria-label="Ampliar visualização do ecossistema tecnológico do Hero em alta definição">
+                <picture class="w-full h-full flex items-center justify-center">
+                  <source srcset="/assets/hero-workspace.webp" type="image/webp" />
+                  <img class="hero-image-enhanced w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.015]"
+                       width="2752"
+                       height="1536"
+                       fetchpriority="high"
+                       alt="Ecossistema Tecnológico Completo LS Tecnologia &amp; Gestão com Dashboard de Vendas em tempo real em laptop e smartphone"
+                       src="/assets/hero-workspace.png" />
+                </picture>
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-floor/50 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+
+                <!-- Ícone de Zoom Lightbox HD sutil no hover -->
+                <div class="absolute top-4 right-4 p-2 rounded-xl bg-black/60 border border-white/10 text-white/70 group-hover:text-primary group-hover:border-primary/50 transition-all opacity-0 group-hover:opacity-100 z-20 pointer-events-none" title="Clique para ampliar em alta definição">
+                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
+                </div>
 
                 <!-- Floating Feature Badges (Desktop/Tablet >= 640px) com animações de flutuação e pontos luminosos -->
                 <!-- Badge Superior Esquerdo: Dados em tempo real -->
