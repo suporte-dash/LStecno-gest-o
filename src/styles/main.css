@@ -222,6 +222,17 @@
   }
 }
 
+@keyframes shieldPulse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 15px 35px rgba(245, 183, 0, 0.3)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.25));
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+    filter: drop-shadow(0 25px 50px rgba(245, 183, 0, 0.55)) drop-shadow(0 0 35px rgba(0, 229, 255, 0.45));
+  }
+}
+
 @keyframes goldShimmer {
   0% {
     transform: translateX(-100%) skewX(-25deg);
@@ -645,6 +656,55 @@
 
   .countup-glow {
     text-shadow: 0 0 16px rgba(245, 183, 0, 0.65);
+  }
+
+  /* ========================================================== */
+  /* SEGURANÇA BLINDADA, CLOUD & ESCUDO CIBERNÉTICO 3D          */
+  /* ========================================================== */
+  .security-shield-asset {
+    animation: shieldPulse 4.5s ease-in-out infinite;
+    will-change: transform, filter;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    transition: filter 0.4s ease;
+  }
+
+  .cyber-security-container:hover .security-shield-asset {
+    filter: drop-shadow(0 28px 60px rgba(245, 183, 0, 0.65)) drop-shadow(0 0 45px rgba(0, 229, 255, 0.55));
+  }
+
+  .shield-halo-bg {
+    position: absolute;
+    inset: -15%;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(245, 183, 0, 0.16) 0%, rgba(0, 229, 255, 0.14) 45%, transparent 72%);
+    filter: blur(45px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.65;
+    transition: opacity 0.5s ease;
+    transform: translateZ(0);
+  }
+
+  .cyber-security-container:hover .shield-halo-bg {
+    opacity: 1;
+  }
+
+  .sla-indicator-card {
+    background: #0d121c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+  }
+
+  .sla-indicator-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 183, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 15px rgba(245, 183, 0, 0.15);
   }
 
   /* 5. FAQ ACCORDION TRANSITIONS */

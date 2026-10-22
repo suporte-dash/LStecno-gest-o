@@ -415,7 +415,7 @@ export function setupConversionTracking() {
   }
 
   // 4. Card Spotlight & Radial Glow Mouse Tracking
-  const spotlightCards = document.querySelectorAll('.spotlight-card, .venda-plus-container, .gerente-virtual-container, .tiagenda-container, .golden-voucher-container');
+  const spotlightCards = document.querySelectorAll('.spotlight-card, .venda-plus-container, .gerente-virtual-container, .tiagenda-container, .golden-voucher-container, .cyber-security-container');
   spotlightCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -505,7 +505,7 @@ export function setupConversionTracking() {
     revealElements.forEach((el) => el.classList.add('is-revealed'));
   }
 
-  // 7. Contadores Numéricos Animados
+  // 7. Contadores Numéricos Animados (SLA & Métricas em 1.2s)
   const counterElements = document.querySelectorAll('[data-counter]');
   if ('IntersectionObserver' in window && counterElements.length > 0) {
     const counterObserver = new IntersectionObserver(
@@ -517,7 +517,7 @@ export function setupConversionTracking() {
             const prefix = el.getAttribute('data-prefix') || '';
             const suffix = el.getAttribute('data-suffix') || '';
             const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-            const duration = 1600; // 1.6 segundos
+            const duration = parseInt(el.getAttribute('data-duration') || '1200', 10); // 1.2 segundos
             const startTime = performance.now();
 
             function updateCounter(currentTime) {
@@ -540,7 +540,7 @@ export function setupConversionTracking() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     counterElements.forEach((el) => counterObserver.observe(el));
