@@ -1,8 +1,8 @@
 /* TEAM */
   Empresa: LS Tecnologia & Gestão
-  Site: https://lstecnologia.com.br
+  Site: https://lstecnogestao.com.br
   Localização: Belém, Pará - Brasil
-  Contato: suporte@lstecnologia.com.br / (91) 98210-2720
+  Contato: contato@lstecnogestao.com.br / (91) 98210-2720
   Instagram: @ls_tecnogestao
 
 /* THANKS */

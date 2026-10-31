@@ -43,5 +43,4 @@ User-agent: CCBot
 Allow: /
 
 # 3. DECLARAÇÃO DO SITEMAP XML & DIRETÓRIO DE INTELIGÊNCIA ARTIFICIAL
-# TODO(cliente): Substituir lstecnologia.com.br pelo domínio definitivo se for diferente
-Sitemap: https://lstecnologia.com.br/sitemap.xml
+Sitemap: https://lstecnogestao.com.br/sitemap.xml

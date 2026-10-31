@@ -1,7 +1,7 @@
 # security.txt - LS Tecnologia & Gestão (RFC 9116)
-Contact: mailto:seguranca@lstecnologia.com.br
+Contact: mailto:seguranca@lstecnogestao.com.br
 Contact: https://wa.me/5591982102720
-Canonical: https://lstecnologia.com.br/.well-known/security.txt
+Canonical: https://lstecnogestao.com.br/.well-known/security.txt
 Preferred-Languages: pt, en
 Expires: 2027-12-31T23:59:59.000Z
-Policy: https://lstecnologia.com.br/politica-de-privacidade
+Policy: https://lstecnogestao.com.br/politica-de-privacidade
