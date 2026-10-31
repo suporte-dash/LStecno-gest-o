@@ -116,10 +116,25 @@
 }
 
 /* ========================================================== */
-/* KEYFRAMES GLOBAIS                                          */
+/* KEYFRAMES GLOBAIS ATIVOS                                   */
 /* ========================================================== */
-@keyframes shimmer-sweep {
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
+.animate-float,
+[class*="animate-[float"] {
+  animation: float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes shimmer-sweep {
   0%,
   75% {
     left: -120%;
@@ -127,49 +142,6 @@
 
   100% {
     left: 220%;
-  }
-}
-
-@keyframes border-beam-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes float-gentle-1 {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes float-gentle-2 {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(6px);
   }
 }
 
@@ -190,218 +162,50 @@
   }
 }
 
-@keyframes float-badge-left {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes float-badge-right {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes hero-card-mobile-float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes floatIsometric {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-10px) rotate(0.5deg);
-  }
-}
-
-@keyframes neuralPulse {
-
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 10px 25px rgba(0, 229, 255, 0.2)) drop-shadow(0 0 15px rgba(245, 183, 0, 0.25));
-  }
-
-  50% {
-    transform: translateY(-8px) scale(1.015);
-    filter: drop-shadow(0 20px 40px rgba(0, 229, 255, 0.4)) drop-shadow(0 0 30px rgba(245, 183, 0, 0.45));
-  }
-}
-
-@keyframes botFloat {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-    filter: drop-shadow(0 12px 25px rgba(0, 229, 255, 0.25)) drop-shadow(0 0 15px rgba(245, 183, 0, 0.2));
-  }
-
-  50% {
-    transform: translateY(-9px) rotate(0.8deg);
-    filter: drop-shadow(0 22px 40px rgba(0, 229, 255, 0.45)) drop-shadow(0 0 28px rgba(245, 183, 0, 0.4));
-  }
-}
-
-@keyframes goldenFloat {
-
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 15px 30px rgba(245, 183, 0, 0.35)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.2));
-  }
-
-  50% {
-    transform: translateY(-8px) scale(1.02);
-    filter: drop-shadow(0 25px 45px rgba(245, 183, 0, 0.55)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
-  }
-}
-
-@keyframes shieldPulse {
-
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 15px 35px rgba(245, 183, 0, 0.3)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.25));
-  }
-
-  50% {
-    transform: translateY(-8px) scale(1.02);
-    filter: drop-shadow(0 25px 50px rgba(245, 183, 0, 0.55)) drop-shadow(0 0 35px rgba(0, 229, 255, 0.45));
-  }
-}
-
-@keyframes portalPulse {
-
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
-    filter: drop-shadow(0 20px 40px rgba(245, 183, 0, 0.35)) drop-shadow(0 0 25px rgba(0, 229, 255, 0.3));
-  }
-
-  50% {
-    transform: translateY(-8px) scale(1.02);
-    filter: drop-shadow(0 30px 60px rgba(245, 183, 0, 0.6)) drop-shadow(0 0 45px rgba(0, 229, 255, 0.5));
-  }
-}
-
-@keyframes goldShimmer {
-  0% {
-    transform: translateX(-100%) skewX(-25deg);
-  }
-
-  20%,
-  100% {
-    transform: translateX(200%) skewX(-25deg);
-  }
-}
-
-@keyframes badge-pulse-subtle-1 {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.95;
-  }
-
-  50% {
-    transform: scale(1.04);
-    opacity: 1;
-  }
-}
-
-@keyframes badge-pulse-subtle-2 {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.95;
-  }
-
-  50% {
-    transform: scale(1.04);
-    opacity: 1;
-  }
-}
-
 /* ========================================================== */
-/* LAYER COMPONENTS: Permite que utilitários Tailwind vençam  */
+/* LAYER COMPONENTS: Efeitos visuais e microinterações       */
 /* ========================================================== */
 @layer components {
 
-  /* 1. CARD SPOTLIGHT & RADIAL GLOW */
-  .spotlight-card {
-    position: relative;
-    isolation: isolate;
-    transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-  }
-
-  .spotlight-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.45), rgba(0, 229, 255, 0.2) 40%, transparent 70%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-  }
-
-  .spotlight-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 183, 0, 0.07), transparent 60%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-  }
-
-  .spotlight-card:hover::before,
-  .spotlight-card:hover::after {
-    opacity: 1;
-  }
-
-  .spotlight-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(245, 183, 0, 0.15);
-  }
-
-  /* 2. SHIMMER METÁLICO NOS BOTÕES PRINCIPAIS */
+  /* 1. SHIMMER & DOURADO METÁLICO CYBERNETIC GOLD */
   .btn-shimmer {
     position: relative;
     overflow: hidden;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  }
+
+  /* Botão Oficial Dourado Metálico Cybernetic Gold */
+  .btn-cyber-gold {
+    background: linear-gradient(135deg, #ffd700 0%, #f5b700 50%, #df9c00 100%) !important;
+    color: #070b14 !important;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 
+      inset 0 1px 1px rgba(255, 255, 255, 0.55),
+      inset 0 -2px 3px rgba(0, 0, 0, 0.25),
+      0 0 25px rgba(245, 183, 0, 0.35) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-cyber-gold:hover {
+    background: linear-gradient(135deg, #ffe04d 0%, #ffc107 50%, #e69a00 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 
+      inset 0 1px 2px rgba(255, 255, 255, 0.75),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+      0 0 45px rgba(245, 183, 0, 0.65) !important;
+  }
+
+  /* Microinteração Tátil Mobile (Sensação Háptica de App Nativo) */
+  .btn-cyber-gold:active,
+  button:not([disabled]):active,
+  [role="button"]:active {
+    transform: scale(0.97) translateY(0) !important;
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(245, 183, 0, 0.4) !important;
+    transition: transform 0.1s cubic-bezier(0.2, 0, 0, 1) !important;
   }
 
   .btn-shimmer::after {
@@ -425,425 +229,7 @@
     box-shadow: 0 0 25px rgba(245, 183, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.4);
   }
 
-  /* 3. BORDA ILUMINADA NO COMBO ESPECIAL */
-  .border-beam-card {
-    position: relative;
-    isolation: isolate;
-    border-radius: 1.5rem;
-    overflow: hidden;
-  }
-
-  .border-beam-card::before {
-    content: '';
-    position: absolute;
-    inset: -150%;
-    background: conic-gradient(from 0deg,
-        transparent 0deg,
-        transparent 280deg,
-        #00e5ff 320deg,
-        #f5b700 350deg,
-        transparent 360deg);
-    animation: border-beam-spin 4s linear infinite;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .border-beam-inner {
-    position: relative;
-    z-index: 1;
-    border-radius: inherit;
-    background-color: rgba(15, 19, 29, 0.96);
-    backdrop-filter: blur(20px);
-    margin: 1.5px;
-  }
-
-  /* 4. MICRO-MOVIMENTO NO HERO */
-  .hero-tilt-container {
-    perspective: 1000px;
-  }
-
-  .hero-tilt-card {
-    transition: transform 0.5s ease-out;
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
-
-  @media (pointer: coarse),
-  (max-width: 767px) {
-    .hero-tilt-card {
-      animation: hero-card-mobile-float 4s ease-in-out infinite;
-    }
-  }
-
-  .animate-float-left {
-    animation: float-badge-left 3.6s ease-in-out infinite;
-  }
-
-  .animate-float-right {
-    animation: float-badge-right 4.2s ease-in-out infinite;
-  }
-
-  .animate-float-badge-1 {
-    animation: float-badge-left 3.6s ease-in-out infinite;
-  }
-
-  .animate-float-badge-2 {
-    animation: float-gentle-2 4s ease-in-out infinite 0.5s;
-  }
-
-  .animate-float-badge-3 {
-    animation: float-badge-right 4.2s ease-in-out infinite;
-  }
-
-  /* 4.1 LEVITAÇÃO ISOMÉTRICA & HOVER SPOTLIGHT (VENDA+) */
-  .venda-plus-asset {
-    animation: floatIsometric 4.5s ease-in-out infinite;
-    will-change: transform;
-    transform: translateZ(0);
-    image-rendering: -webkit-optimize-contrast;
-    transition: filter 0.4s ease;
-  }
-
-  .venda-plus-container:hover .venda-plus-asset {
-    filter: drop-shadow(0 15px 35px rgba(0, 229, 255, 0.2)) drop-shadow(0 0 20px rgba(245, 183, 0, 0.25));
-  }
-
-  /* 4.2 PULSO NEURAL 3D & HALO SPOTLIGHT (GERENTE VIRTUAL) */
-  .neural-brain-asset {
-    animation: neuralPulse 4s ease-in-out infinite;
-    will-change: transform, filter;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: filter 0.4s ease;
-  }
-
-  .gerente-virtual-container:hover .neural-brain-asset {
-    filter: drop-shadow(0 25px 45px rgba(0, 229, 255, 0.45)) drop-shadow(0 0 35px rgba(245, 183, 0, 0.5));
-  }
-
-  .neural-halo-bg {
-    position: absolute;
-    inset: -15%;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(245, 183, 0, 0.16) 0%, rgba(0, 229, 255, 0.09) 45%, transparent 72%);
-    filter: blur(44px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-    transition: opacity 0.5s ease;
-    transform: translateZ(0);
-  }
-
-  .gerente-virtual-container:hover .neural-halo-bg {
-    opacity: 1;
-  }
-
-  /* 4.3 FLUTUAÇÃO SUAVE & SPOTLIGHT REATIVO (TIAGENDA) */
-  .tiagenda-robot-asset {
-    animation: botFloat 4.5s ease-in-out infinite;
-    will-change: transform, filter;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: filter 0.4s ease;
-  }
-
-  .tiagenda-container:hover .tiagenda-robot-asset {
-    filter: drop-shadow(0 25px 50px rgba(0, 229, 255, 0.55)) drop-shadow(0 0 35px rgba(245, 183, 0, 0.45));
-  }
-
-  .robot-halo-bg {
-    position: absolute;
-    inset: -15%;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(0, 229, 255, 0.16) 0%, rgba(245, 183, 0, 0.09) 50%, transparent 75%);
-    filter: blur(44px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-    transition: opacity 0.5s ease;
-    transform: translateZ(0);
-  }
-
-  .tiagenda-container:hover .robot-halo-bg {
-    opacity: 1;
-  }
-
-  /* 4.4 LEVITAÇÃO DOURADA & SHIMMER METÁLICO (COMBO MEI) */
-  .golden-voucher-asset {
-    animation: goldenFloat 4s ease-in-out infinite;
-    will-change: transform, filter;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: filter 0.4s ease;
-  }
-
-  .golden-voucher-container:hover .golden-voucher-asset {
-    filter: drop-shadow(0 28px 55px rgba(245, 183, 0, 0.65)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.5));
-  }
-
-  .golden-halo-bg {
-    position: absolute;
-    inset: -15%;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(245, 183, 0, 0.22) 0%, rgba(255, 208, 0, 0.1) 45%, transparent 72%);
-    filter: blur(44px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.65;
-    transition: opacity 0.5s ease;
-    transform: translateZ(0);
-  }
-
-  .golden-voucher-container:hover .golden-halo-bg {
-    opacity: 1;
-  }
-
-  .shimmer-badge {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shimmer-badge::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-    animation: goldShimmer 5s infinite;
-    pointer-events: none;
-  }
-
-  .combo-mei-cta-btn:hover {
-    transform: scale(1.02) translateY(-2px);
-    box-shadow: 0 10px 25px rgba(245, 183, 0, 0.45);
-  }
-
-  .animate-badge-pulse-1 {
-    animation: badge-pulse-subtle-1 3.2s ease-in-out infinite;
-  }
-
-  .animate-badge-pulse-2 {
-    animation: badge-pulse-subtle-2 3.8s ease-in-out infinite 0.6s;
-  }
-
-  /* ========================================================== */
-  /* SIMULADOR EM TEMPO REAL - CYBERNETIC DARK GOLD             */
-  /* ========================================================== */
-  .simulator-segment-card {
-    background-color: #171c25;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.25s ease,
-      box-shadow 0.25s ease,
-      background 0.25s ease;
-  }
-
-  .simulator-segment-card:hover {
-    border-color: rgba(245, 183, 0, 0.45);
-    transform: translateY(-2px);
-  }
-
-  .simulator-segment-card.is-active {
-    border-color: #f5b700;
-    background: linear-gradient(135deg, rgba(245, 183, 0, 0.12) 0%, #171c25 100%);
-    box-shadow: 0 0 18px rgba(245, 183, 0, 0.25);
-  }
-
-  .simulator-addon-card {
-    background-color: #171c25;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.25s ease,
-      box-shadow 0.25s ease,
-      background 0.25s ease;
-  }
-
-  .simulator-addon-card:hover {
-    border-color: rgba(0, 229, 255, 0.35);
-  }
-
-  .simulator-addon-card.is-active {
-    border-color: #00e5ff;
-    background: linear-gradient(135deg, rgba(0, 229, 255, 0.09) 0%, #171c25 100%);
-    box-shadow: 0 0 18px rgba(0, 229, 255, 0.22);
-    transform: scale(1.015);
-  }
-
-  /* Cybernetic Toggle Switch */
-  .cyber-toggle {
-    width: 44px;
-    height: 24px;
-    border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
-    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
-  }
-
-  .cyber-toggle-thumb {
-    width: 18px;
-    height: 18px;
-    border-radius: 9999px;
-    background: #94a3b8;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .simulator-addon-card.is-active .cyber-toggle {
-    background: rgba(0, 229, 255, 0.25);
-    border-color: #00e5ff;
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
-  }
-
-  .simulator-addon-card.is-active .cyber-toggle-thumb {
-    transform: translateX(20px);
-    background: #00e5ff;
-    box-shadow: 0 0 8px #00e5ff;
-  }
-
-  /* Simulator Summary Card */
-  .simulator-summary-card {
-    background: rgba(10, 14, 23, 0.95);
-    border: 1px solid rgba(245, 183, 0, 0.3);
-    border-radius: 1.25rem;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 183, 0, 0.12);
-  }
-
-  .simulator-cta-btn {
-    background: linear-gradient(90deg, #f5b700 0%, #ffd000 50%, #e0a200 100%);
-    box-shadow: 0 10px 25px rgba(245, 183, 0, 0.35);
-  }
-
-  .simulator-cta-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 14px 35px rgba(245, 183, 0, 0.5);
-  }
-
-  .countup-glow {
-    text-shadow: 0 0 16px rgba(245, 183, 0, 0.65);
-  }
-
-  /* ========================================================== */
-  /* SEGURANÇA BLINDADA, CLOUD & ESCUDO CIBERNÉTICO 3D          */
-  /* ========================================================== */
-  .security-shield-asset {
-    animation: shieldPulse 4.5s ease-in-out infinite;
-    will-change: transform, filter;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    transition: filter 0.4s ease;
-  }
-
-  .cyber-security-container:hover .security-shield-asset {
-    filter: drop-shadow(0 28px 60px rgba(245, 183, 0, 0.65)) drop-shadow(0 0 45px rgba(0, 229, 255, 0.55));
-  }
-
-  .shield-halo-bg {
-    position: absolute;
-    inset: -15%;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(245, 183, 0, 0.16) 0%, rgba(0, 229, 255, 0.14) 45%, transparent 72%);
-    filter: blur(45px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.65;
-    transition: opacity 0.5s ease;
-    transform: translateZ(0);
-  }
-
-  .cyber-security-container:hover .shield-halo-bg {
-    opacity: 1;
-  }
-
-  .sla-indicator-card {
-    background: #0d121c;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.25s ease,
-      box-shadow 0.25s ease;
-  }
-
-  .sla-indicator-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(245, 183, 0, 0.4);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 15px rgba(245, 183, 0, 0.15);
-  }
-
-  /* ========================================================== */
-  /* PORTAL CIBERNÉTICO & BANNER FINAL DE CONVERSÃO (CTA)       */
-  /* ========================================================== */
-  .portal-asset {
-    animation: portalPulse 5s ease-in-out infinite;
-    will-change: transform, filter;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    transition: filter 0.4s ease;
-  }
-
-  .cyber-portal-container:hover .portal-asset {
-    filter: drop-shadow(0 35px 70px rgba(245, 183, 0, 0.75)) drop-shadow(0 0 55px rgba(0, 229, 255, 0.65));
-  }
-
-  .portal-warp-bg {
-    position: absolute;
-    inset: -15%;
-    border-radius: 9999px;
-    background: radial-gradient(circle at center, rgba(245, 183, 0, 0.22) 0%, rgba(0, 229, 255, 0.16) 35%, transparent 70%);
-    filter: blur(55px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.75;
-    transition: opacity 0.5s ease;
-    transform: translateZ(0);
-  }
-
-  .cyber-portal-container:hover .portal-warp-bg {
-    opacity: 1;
-  }
-
-  .final-portal-card {
-    background: linear-gradient(180deg, rgba(18, 23, 34, 0.92) 0%, rgba(10, 14, 23, 0.96) 100%);
-    border: 1px solid rgba(245, 183, 0, 0.3);
-    border-radius: 1.5rem;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(245, 183, 0, 0.1);
-  }
-
-  .final-cta-btn {
-    background: linear-gradient(90deg, #f5b700 0%, #ffd000 50%, #e0a200 100%);
-    box-shadow: 0 12px 30px rgba(245, 183, 0, 0.35);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .final-cta-btn:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 16px 45px rgba(245, 183, 0, 0.6);
-  }
-
-  /* 5. FAQ ACCORDION TRANSITIONS */
+  /* 2. FAQ ACCORDION TRANSITIONS */
   .faq-item {
     transition: background-color 0.25s ease, border-color 0.25s ease;
   }
@@ -866,15 +252,7 @@
     transform: rotate(180deg);
   }
 
-  /* 6. GLOWS & EFEITOS */
-  .glow-gold {
-    box-shadow: 0 0 25px rgba(245, 183, 0, 0.35);
-  }
-
-  .glow-cyan {
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
-  }
-
+  /* 3. GLOWS & EFEITOS */
   .glow-whatsapp {
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.45);
   }
@@ -899,23 +277,7 @@
   transform: translateY(0);
 }
 
-.faq-answer-inner {
-  overflow: hidden;
-  min-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top-width: 0;
-  transition: padding .3s ease;
-}
-
-.faq-item.is-open .faq-answer-inner {
-  padding-top: .5rem;
-  padding-bottom: 1rem;
-  border-top-width: 1px;
-}
-
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -932,5 +294,53 @@
 @media (pointer: coarse) {
   #hero-cursor-field-host {
     display: none;
+  }
+}
+
+/* ============================================================== */
+/* PALCO DE DECOLAGEM DO FOGUETE 3D (CTA FINAL #cta-final)        */
+/* ============================================================== */
+.rocket-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: visible;
+  outline-offset: 8px;
+}
+
+.rocket-stage picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rocket-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.rocket-stage canvas {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rocket-stage canvas {
+    display: none !important;
   }
 }

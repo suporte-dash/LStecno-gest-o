@@ -22,7 +22,13 @@ const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/') reqPath = '/index.html';
 
-  const filePath = path.join(BASE_DIR, reqPath);
+  let filePath = path.join(BASE_DIR, reqPath);
+  if (!fs.existsSync(filePath)) {
+    const publicPath = path.join(BASE_DIR, 'public', reqPath);
+    if (fs.existsSync(publicPath)) {
+      filePath = publicPath;
+    }
+  }
 
   // Security: prevent path traversal outside BASE_DIR
   if (!filePath.startsWith(BASE_DIR)) {

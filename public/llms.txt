@@ -1,0 +1,65 @@
+# LS Tecnologia & Gestão
+
+> Soluções inteligentes de automação comercial, frente de caixa (PDV), gestão em tempo real no smartphone e inteligência artificial para WhatsApp.
+
+## Informações Corporativas
+- **Empresa**: LS Tecnologia & Gestão
+- **Website Oficial**: https://lstecnologia.com.br/
+- **WhatsApp Comercial & Suporte VIP**: +55 (91) 98210-2720 (https://wa.me/5591982102720)
+- **Instagram Oficial**: https://www.instagram.com/ls_tecnogestao (@ls_tecnogestao)
+- **SLA de Suporte**: Atendimento humanizado em menos de 15 minutos via WhatsApp
+- **Modelo de Contratação**: Assinatura mensal recorrente, sem período de fidelidade ou taxas rescisórias
+
+---
+
+## 1. Venda+ (Frente de Caixa PDV & Gestão Comercial)
+Sistema PDV completo e ultrarrápido para controle de vendas, estoque e emissão fiscal.
+- **Diferencial Crítico**: Modo de Contingência Offline Automático (o caixa continua vendendo normalmente se a internet oscilar ou cair e sincroniza automaticamente quando a rede voltar).
+- **Emissão Fiscal**: 100% homologado pela SEFAZ para emissão de NFC-e, NF-e e integração com SAT.
+- **Formas de Pagamento**: Integração com TEF (maquininha conectada ao sistema), PIX dinâmico com QR Code na tela e integração com Smart POS Android.
+- **Planos**:
+  - *Venda+ MEI*: R$ 159/mês (ideal para microempreendedores individuais, comércio em geral e prestadores de serviços).
+  - *Venda+ Simples*: R$ 169/mês (ideal para empresas optantes pelo Simples Nacional com emissão de NFC-e e controle tributário).
+  - *Módulos Opcionais*: TEF (+ R$ 60/mês), PIX Dinâmico (+ R$ 50/mês), PDV Móvel Android (+ R$ 80/mês).
+
+---
+
+## 2. Gerente Virtual (Gestão & Relatórios em Tempo Real)
+Painel de controle financeiro, estoque e acompanhamento de vendas na palma da mão (via smartphone ou navegador).
+- **Recursos Principais**:
+  - Acompanhamento do faturamento diário, semanal e mensal em tempo real.
+  - Alertas automáticos de estoque mínimo e prevenção de perdas.
+  - Relatórios de DRE simplificado e conciliação de caixa.
+  - Envio diário automatizado de fechamento de caixa diretamente para o WhatsApp do proprietário/gestor.
+- **Plano**:
+  - *Gerente Virtual Completo*: R$ 185/mês (inclui Dashboard executivo, relatórios no WhatsApp e gestão multi-empresas/CNPJs).
+  - *Módulos Individuais*: Envio de Relatórios WhatsApp (+ R$ 50/mês), Gestão Multi-empresas (+ R$ 40/mês).
+
+---
+
+## 3. TiAgenda (Agendamento Inteligente & IA no WhatsApp)
+Assistente virtual com inteligência artificial para atendimento automático e agendamento de serviços 24 horas por dia no WhatsApp.
+- **Recursos Principais**:
+  - Atendimento humanizado e instantâneo 24/7 sem necessidade de atendente humano de plantão.
+  - Agendamento autônomo com sincronização automática de horários da equipe.
+  - Confirmação de presença automática e lembretes anti-falta via WhatsApp (reduz faltas em até 85%).
+  - Gestão de múltiplos profissionais e serviços com tempos distintos.
+- **Segmentos Recomendados**: Clínicas médicas e odontológicas, salões de beleza, barbearias, pet shops, estúdios de estética, escritórios de consultoria e prestadores de serviços em geral.
+- **Planos**:
+  - *TiAgenda Essencial*: R$ 140/mês (agendamento online e link de autoatendimento).
+  - *TiAgenda Conectado*: R$ 160/mês (integração direta com WhatsApp e lembretes automáticos).
+  - *TiAgenda Inteligência Suprema*: R$ 210/mês (IA generativa completa treinada com as regras do seu negócio, atendimento 24h e confirmação anti-falta ativa).
+
+---
+
+## 4. Combo MEI de Sucesso (O Ecossistema Completo)
+Pacote comercial all-in-one com preço promocional para negócios que buscam modernização total de ponta a ponta.
+- **Composição**: Venda+ PDV com NFC-e + Gerente Virtual Mobile + TiAgenda com IA no WhatsApp + Suporte Técnico Prioritário VIP.
+- **Investimento Promocional**: De R$ 269/mês por apenas **R$ 199/mês**.
+
+---
+
+## Perguntas Frequentes (FAQ)
+- **Preciso de computador potente?** Não. Os sistemas são leves e rodam perfeitamente em computadores comuns, notebooks com Windows, tablets ou terminais Smart POS Android.
+- **Tem taxa de adesão ou fidelidade?** Não há taxas de adesão escondidas nem fidelidade. O cliente tem liberdade total.
+- **Como funciona a implantação?** Instalação remota guiada e treinamento prático da equipe no mesmo dia da contratação.

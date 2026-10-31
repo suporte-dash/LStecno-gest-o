@@ -1,0 +1,47 @@
+# ==============================================================================
+# ROBOTS.TXT — LS TECNOLOGIA & GESTÃO
+# Produção & Indexação Inteligente (Google, Bing, Yahoo & Motores de IA)
+# ==============================================================================
+
+# 1. RASTREADORES GLOBAIS DE BUSCA WEB (Google, Bing, Apple, etc.)
+User-agent: *
+Allow: /
+Allow: /assets/
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# 2. RASTREADORES DE BUSCA GENERATIVA & IA (GEO: ChatGPT, Claude, Perplexity, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# 3. DECLARAÇÃO DO SITEMAP XML & DIRETÓRIO DE INTELIGÊNCIA ARTIFICIAL
+# TODO(cliente): Substituir lstecnologia.com.br pelo domínio definitivo se for diferente
+Sitemap: https://lstecnologia.com.br/sitemap.xml

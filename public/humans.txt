@@ -1,0 +1,16 @@
+/* TEAM */
+  Empresa: LS Tecnologia & Gestão
+  Site: https://lstecnologia.com.br
+  Localização: Belém, Pará - Brasil
+  Contato: suporte@lstecnologia.com.br / (91) 98210-2720
+  Instagram: @ls_tecnogestao
+
+/* THANKS */
+  Aos nossos clientes, parceiros comerciais e microempreendedores que confiam diariamente na automação da LS Tecnologia.
+
+/* SITE */
+  Última Atualização: 2026/10/31
+  Padrões: HTML5, CSS3, ES2026, Schema.org, WCAG 2.1 AA
+  Tecnologias: Vite, Tailwind CSS v4, Vanilla WebGL (Simplex Noise), Responsive Mobile-First
+  Formato de Imagens: WebP, PNG Otimizado
+  Arquitetura: Single Page Application / Static Site Generation de Alta Performance

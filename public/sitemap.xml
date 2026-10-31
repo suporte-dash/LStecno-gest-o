@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- PÁGINA PRINCIPAL / LANDING PAGE DE VENDAS -->
+  <url>
+    <!-- TODO(cliente): Substituir https://lstecnologia.com.br pelo domínio oficial se diferente -->
+    <loc>https://lstecnologia.com.br/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- ASSETS CANÔNICOS DE PRODUTO PARA O GOOGLE IMAGENS -->
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/ls-logo.png</image:loc>
+      <image:title>LS Tecnologia e Gestão - Logotipo Oficial</image:title>
+      <image:caption>Sistemas de Automação Comercial, PDV e Inteligência Artificial</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/logo-hero-master.webp</image:loc>
+      <image:title>LS Tecnologia - Emblema Lobo Alfa 3D</image:title>
+      <image:caption>Liderança tecnológica, segurança e inovação para o seu negócio</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/venda-showcase-hardware.webp</image:loc>
+      <image:title>Venda+ Frente de Caixa PDV e Hardware Comercial</image:title>
+      <image:caption>PDV ultrarrápido com contingência offline e emissão fiscal NFC-e</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/gerente-virtual-showcase.webp</image:loc>
+      <image:title>Gerente Virtual - Painel de Gestão e Dashboard Mobile</image:title>
+      <image:caption>Relatórios gerenciais em tempo real com envio automático no WhatsApp</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/tiagenda-showcase-ai.webp</image:loc>
+      <image:title>TiAgenda - Agendamento Inteligente com Assistente de IA</image:title>
+      <image:caption>Atendimento 24h humanizado no WhatsApp e confirmação anti-falta</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/combo-mei-showcase.webp</image:loc>
+      <image:title>Combo MEI de Sucesso - Automação Comercial Completa</image:title>
+      <image:caption>Pacote completo unindo Venda+ PDV, Gerente Virtual e TiAgenda</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://lstecnologia.com.br/assets/foguete.webp</image:loc>
+      <image:title>LS Tecnologia - Decolagem e Aceleração de Negócios</image:title>
+      <image:caption>Transformação digital de alta performance para o comércio</image:caption>
+    </image:image>
+  </url>
+</urlset>

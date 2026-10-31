@@ -206,3 +206,23 @@ The geometric personality features controlled corner radii that balance sleek co
 
 ### Input Fields
 - Dark navy surface (`#070B14`) with a `1px` border in `#1C2B52`. On focus, transitions to an electric cyan stroke (`#00D2FF`) with an ambient cyan glow (`0 0 8px rgba(0, 210, 255, 0.3)`). Placeholder text in `#8E9CB2`.
+
+### Interactive Components & Motion (.rocket-stage)
+- **Localização:** Seção de CTA Final (`#cta-final`), coluna direita.
+- **Estrutura:** `.rocket-stage` (HTML5 `<picture>` + `<canvas aria-hidden="true">`) com `role="button"`, `tabindex="0"`, `aria-label="Repetir decolagem do foguete"` e `data-loop`.
+- **Assets:** `/assets/foguete.webp` (162 KB) com fallback para `/assets/foguete.png` (188 KB) em resolução nativa 1024x1024.
+- **Propulsores (EMIT em coordenadas 1024px):**
+  - Ejetor Esquerdo: `{ x: 245, y: 672, w: 30, c: '80,225,255' }` (Ciano Neon)
+  - Ejetor Central: `{ x: 322, y: 752, w: 46, c: '255,200,90' }` (Dourado Metálico)
+  - Ejetor Direito: `{ x: 440, y: 815, w: 32, c: '80,225,255' }` (Ciano Neon)
+- **Duração das Fases (`T` em segundos):**
+  - `ignite`: 1.3s (tremor e ignição progressiva de chama)
+  - `climb`: 1.5s (aceleração diagonal ascendente com partículas e fumaça cibernética)
+  - `away`: 0.5s (fora de tela)
+  - `back`: 1.7s (reentrada suave desacelerando até repouso)
+  - `idle`: pulso de chama contínuo e levitação suave. Repetição automática a cada 8s configurada via `data-loop`.
+- **Controles de Desempenho e Acessibilidade:**
+  - DPR limitado a 2; máximo de 600 partículas ativas no canvas.
+  - Pausa de execução via `IntersectionObserver` (fora de visão) e `document.visibilitychange` (aba oculta).
+  - Suporte estrito a `prefers-reduced-motion: reduce`: cancelamento de loop, ocultação de canvas e repouso estático absoluto.
+  - Botão de lupa do lightbox (`.showcase-lightbox-trigger`) isolado como irmão do palco, garantindo clique para ampliação sem conflito com o disparo da animação.

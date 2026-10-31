@@ -1,0 +1,25 @@
+{
+  "name": "LS Tecnologia & Gestão — Soluções Comerciais & IA",
+  "short_name": "LS Tecnologia",
+  "description": "Frente de caixa ágil (PDV), gestão em tempo real no celular e assistente com inteligência artificial para WhatsApp.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#f5b700",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/assets/ls-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity",
+    "finance"
+  ]
+}
