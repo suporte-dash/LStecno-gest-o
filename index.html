@@ -1666,25 +1666,23 @@
                 </div>
               </div>
 
-              <!-- ETAPA 2: MÓDULOS ADICIONAIS (Gaveta Sanfonada no Mobile / Aberto no Desktop) -->
+              <!-- ETAPA 2: MÓDULOS ADICIONAIS (Gaveta Sanfonada no Mobile / Aberto e Estático no Desktop) -->
               <div class="space-y-4">
                 <details class="group/sim-modules w-full [&[open]>summary_.chevron-arrow]:rotate-180" open-desktop>
                   
-                  <!-- Gatilho Acordeão no Mobile (No Desktop funciona como Cabeçalho Estático) -->
-                  <summary class="list-none cursor-pointer lg:cursor-default p-3.5 sm:p-4 rounded-xl bg-[#0f172a]/90 border border-slate-800 hover:border-slate-700 lg:hover:border-slate-800 transition-all flex items-center justify-between select-none min-h-[52px]">
-                    <div class="flex items-center gap-2.5">
-                      <span class="flex items-center justify-center w-6 h-6 rounded-lg bg-[#00e5ff] text-slate-950 font-black text-xs">2</span>
-                      <h3 class="text-sm sm:text-base lg:text-lg font-bold text-white tracking-tight">
-                        Turbine com Módulos Adicionais:
+                  <!-- Cabeçalho Idêntico à Etapa 1 (No Desktop é limpo e estático; no mobile funciona como gatilho) -->
+                  <summary class="list-none cursor-pointer lg:cursor-default p-3 sm:p-3.5 rounded-xl bg-[#0f172a]/90 border border-slate-800 lg:bg-transparent lg:border-none lg:p-0 lg:min-h-0 lg:pointer-events-none transition-all flex items-center justify-between select-none">
+                    <div class="flex items-center gap-3">
+                      <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-[#00e5ff] text-slate-950 font-black text-sm shrink-0">2</span>
+                      <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
+                        <span>Turbine com Módulos Adicionais</span>
+                        <span class="text-[10px] sm:text-xs text-[#00e5ff] font-semibold bg-[#00e5ff]/10 px-2.5 py-0.5 rounded-full border border-[#00e5ff]/30">Opcional</span>
                       </h3>
-                      <span class="text-[10px] sm:text-xs text-[#00e5ff] font-semibold bg-[#00e5ff]/10 px-2 py-0.5 rounded-full border border-[#00e5ff]/30">
-                        Opcional
-                      </span>
                     </div>
 
                     <div class="flex items-center gap-2">
-                      <span class="hidden sm:inline text-xs text-[#00e5ff] font-medium">Multi-seleção reativa</span>
-                      <!-- Flecha indicadora no mobile -->
+                      <span class="text-xs text-slate-400 hidden sm:inline">Multi-seleção opcional</span>
+                      <!-- Flecha indicadora apenas no mobile -->
                       <svg class="chevron-arrow w-4 h-4 text-slate-400 transition-transform duration-300 lg:hidden shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
                       </svg>
@@ -1692,7 +1690,7 @@
                   </summary>
 
                   <!-- Grid de Checkboxes Estilizados (Abre no mobile ao tocar / Sempre aberto no Desktop) -->
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-3.5">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-3.5 lg:pt-0">
                   
                   <!-- Módulo 1: PDV Móvel (Default selecionado para exemplo) -->
                   <label class="module-card flex items-center justify-between p-4 rounded-xl bg-[#0f172a]/90 border border-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.2)] cursor-pointer transition-all duration-300 min-h-[56px]">
@@ -2887,7 +2885,7 @@
   <script type="module" src="/src/scripts/conversion.js"></script>
 
   <script>
-    // Garante que os details de módulos fiquem sempre abertos em telas grandes (≥ 1024px)
+    // Garante que os details de módulos fiquem sempre abertos e nunca fechem em telas grandes (≥ 1024px)
     const addonDetailsList = document.querySelectorAll('details[open-desktop]');
     if (addonDetailsList.length > 0) {
       const handleAddonResize = () => {
@@ -2897,6 +2895,18 @@
       };
       window.addEventListener('resize', handleAddonResize);
       handleAddonResize();
+
+      // Impede fechamento acidental ao clicar no título em telas Desktop (≥ 1024px)
+      addonDetailsList.forEach(detail => {
+        const summary = detail.querySelector('summary');
+        if (summary) {
+          summary.addEventListener('click', (e) => {
+            if (window.innerWidth >= 1024) {
+              e.preventDefault();
+            }
+          });
+        }
+      });
     }
   </script>
 </body>
