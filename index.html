@@ -1670,15 +1670,12 @@
               <div class="space-y-4">
                 <details class="group/sim-modules w-full [&[open]>summary_.chevron-arrow]:rotate-180" open-desktop>
                   
-                  <!-- Cabeçalho Idêntico à Etapa 1 (No Desktop é limpo e estático; no mobile funciona como gatilho) -->
+                  <!-- Cabeçalho Idêntico à Etapa 1 (Sem pílula, limpo e estático no Desktop) -->
                   <summary class="list-none cursor-pointer lg:cursor-default p-3 sm:p-3.5 rounded-xl bg-[#0f172a]/90 border border-slate-800 lg:bg-transparent lg:border-none lg:p-0 lg:min-h-0 lg:pointer-events-none transition-all flex items-center justify-between select-none">
-                    <div class="flex items-center gap-3">
+                    <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-3">
                       <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-[#00e5ff] text-slate-950 font-black text-sm shrink-0">2</span>
-                      <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                        <span>Turbine com Módulos Adicionais</span>
-                        <span class="text-[10px] sm:text-xs text-[#00e5ff] font-semibold bg-[#00e5ff]/10 px-2.5 py-0.5 rounded-full border border-[#00e5ff]/30">Opcional</span>
-                      </h3>
-                    </div>
+                      Turbine com Módulos Adicionais
+                    </h3>
 
                     <div class="flex items-center gap-2">
                       <span class="text-xs text-slate-400 hidden sm:inline">Multi-seleção opcional</span>
@@ -1689,8 +1686,8 @@
                     </div>
                   </summary>
 
-                  <!-- Grid de Checkboxes Estilizados (Abre no mobile ao tocar / Sempre aberto no Desktop) -->
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-3.5 lg:pt-0">
+                  <!-- Grid de Checkboxes Estilizados (Mesmo espaçamento mt-4 / 16px exato da Etapa 1) -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-4">
                   
                   <!-- Módulo 1: PDV Móvel (Default selecionado para exemplo) -->
                   <label class="module-card flex items-center justify-between p-4 rounded-xl bg-[#0f172a]/90 border border-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.2)] cursor-pointer transition-all duration-300 min-h-[56px]">
