@@ -57,6 +57,13 @@
         "name": "Venda+ PDV & Gestão Comercial",
         "operatingSystem": "Windows, Web, Android",
         "applicationCategory": "BusinessApplication",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "248",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "offers": {
           "@type": "Offer",
           "price": "159.00",
@@ -120,8 +127,12 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="/assets/ls-logo.png?v=2" />
-  <link rel="apple-touch-icon" href="/assets/ls-logo.png?v=2" />
+  <!-- Preload Crítico da Imagem LCP do Hero (Elimina Latência Mobile) -->
+  <link rel="preload" as="image" href="/assets/logo-hero-master.webp" type="image/webp" fetchpriority="high" />
+
+  <!-- Favicon e Ícones Padronizados em Cache Único -->
+  <link rel="icon" type="image/png" href="/assets/ls-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/ls-logo.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="author" href="/humans.txt" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -660,7 +671,7 @@
                           </div>
                           
                           <div>
-                            <h5 class="text-xl font-bold text-white group-hover:text-[#f5b700] transition-colors">Venda+ Plano MEI</h5>
+                            <h4 class="text-xl font-bold text-white group-hover:text-[#f5b700] transition-colors">Venda+ Plano MEI</h4>
                             <p class="text-xs text-slate-400 mt-1 leading-relaxed">Ideal para microempreendedores organizando vendas, estoque e caixa.</p>
                           </div>
 
@@ -705,7 +716,7 @@
                           </div>
 
                           <div>
-                            <h5 class="text-xl font-bold text-white">Venda+ Plano Simples</h5>
+                            <h4 class="text-xl font-bold text-white">Venda+ Plano Simples</h4>
                             <p class="text-xs text-slate-300 mt-1 leading-relaxed">Para empresas com obrigatoriedade e emissão de cupom fiscal veloz.</p>
                           </div>
 
@@ -785,7 +796,7 @@
                                 <svg class="w-5 h-5 fill-emerald-400" viewBox="0 0 24 24"><path d="M17.472 14.382c-.301-.15-1.776-.876-2.051-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.49-.893-.797-1.496-1.782-1.671-2.082-.175-.3-.019-.462.13-.611.136-.134.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.585-.492-.506-.676-.515-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.502s1.075 2.903 1.225 3.103c.15.2 2.115 3.23 5.124 4.531.716.31 1.275.495 1.71.634.72.229 1.376.197 1.895.12.578-.086 1.776-.726 2.026-1.427.25-.7.25-1.301.175-1.427-.075-.126-.275-.201-.575-.351zM12.042 2C6.502 2 2 6.502 2 12.042c0 1.77.461 3.498 1.336 5.016L2 22l5.087-1.335a9.986 9.986 0 0 0 4.955 1.377h.004c5.539 0 10.042-4.503 10.042-10.042 0-2.682-1.045-5.203-2.943-7.101A9.972 9.972 0 0 0 12.042 2zm0 18.334h-.003a8.318 8.318 0 0 1-4.241-1.157l-.304-.181-3.155.828.842-3.076-.198-.316a8.297 8.297 0 0 1-1.27-4.39c0-4.593 3.738-8.331 8.334-8.331 2.225 0 4.318.867 5.892 2.441a8.288 8.288 0 0 1 2.438 5.893c0 4.595-3.739 8.333-8.334 8.333z"/></svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white">Integração WhatsApp</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white">Integração WhatsApp</h5>
                                 <p class="text-[11px] text-slate-400">Notificações e pedidos direto no Zap</p>
                               </div>
                             </div>
@@ -801,7 +812,7 @@
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white">Pix Automático no PDV</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white">Pix Automático no PDV</h5>
                                 <p class="text-[11px] text-slate-400">QR Code dinâmico com baixa instantânea</p>
                               </div>
                             </div>
@@ -817,7 +828,7 @@
                                 <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white">Módulo TEF Maquininha</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white">Módulo TEF Maquininha</h5>
                                 <p class="text-[11px] text-slate-400">Cartão integrado sem digitação manual</p>
                               </div>
                             </div>
@@ -833,7 +844,7 @@
                                 <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white">PDV Móvel Celular</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white">PDV Móvel Celular</h5>
                                 <p class="text-[11px] text-slate-400">Venda volante e comanda no celular</p>
                               </div>
                             </div>
@@ -990,7 +1001,7 @@
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-800/80">
                           <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-[#f5b700]">Plataforma Unificada</span>
-                            <h5 class="text-2xl font-extrabold text-white mt-0.5">Gerente Virtual Completo</h5>
+                            <h4 class="text-2xl font-extrabold text-white mt-0.5">Gerente Virtual Completo</h4>
                             <p class="text-xs text-slate-300 mt-1">Todos os dashboards analíticos, relatórios e automações em um único plano.</p>
                           </div>
 
@@ -1068,7 +1079,7 @@
                                 </svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white group-hover:text-[#f5b700] transition-colors">Dashboard + Listagem</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white group-hover:text-[#f5b700] transition-colors">Dashboard + Listagem</h5>
                                 <p class="text-[11px] text-slate-400">Visão analítica de mercadorias e vendas</p>
                               </div>
                             </div>
@@ -1086,7 +1097,7 @@
                                 </svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors">Envio de Relatórios WhatsApp</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors">Envio de Relatórios WhatsApp</h5>
                                 <p class="text-[11px] text-slate-400">Fechamentos e alertas automáticos no Zap</p>
                               </div>
                             </div>
@@ -1104,7 +1115,7 @@
                                 </svg>
                               </div>
                               <div class="min-w-0">
-                                <h6 class="text-xs sm:text-sm font-semibold text-white group-hover:text-[#00e5ff] transition-colors">Controle Multi-empresas</h6>
+                                <h5 class="text-xs sm:text-sm font-semibold text-white group-hover:text-[#00e5ff] transition-colors">Controle Multi-empresas</h5>
                                 <p class="text-[11px] text-slate-400">Gerencie filiais e diferentes CNPJs</p>
                               </div>
                             </div>
@@ -1255,7 +1266,7 @@
                     <div class="w-[82vw] min-w-[275px] max-w-[315px] shrink-0 snap-start md:w-auto md:max-w-none p-6 rounded-2xl bg-[#0f172a]/80 border border-slate-800 hover:border-slate-700 backdrop-blur-md transition-all duration-300 flex flex-col justify-between group">
                       <div class="space-y-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Início Rápido</span>
-                        <h5 class="text-xl font-bold text-white group-hover:text-slate-200 transition-colors">Plano Essencial</h5>
+                        <h4 class="text-xl font-bold text-white group-hover:text-slate-200 transition-colors">Plano Essencial</h4>
                         <p class="text-xs text-slate-400 leading-relaxed">Agenda Básica online para organizar atendimentos no painel.</p>
 
                         <div class="pt-3 pb-2 border-t border-slate-800/80">
@@ -1288,7 +1299,7 @@
                     <div class="w-[82vw] min-w-[275px] max-w-[315px] shrink-0 snap-start md:w-auto md:max-w-none p-6 rounded-2xl bg-[#0f172a]/80 border border-slate-800 hover:border-[#00e5ff]/50 backdrop-blur-md transition-all duration-300 flex flex-col justify-between group">
                       <div class="space-y-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-[#00e5ff]">Comunicação Direta</span>
-                        <h5 class="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors">Plano Conectado</h5>
+                        <h4 class="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors">Plano Conectado</h4>
                         <p class="text-xs text-slate-400 leading-relaxed">Agenda + WhatsApp para notificações e confirmações automáticas.</p>
 
                         <div class="pt-3 pb-2 border-t border-slate-800/80">
@@ -1326,7 +1337,7 @@
 
                       <div class="space-y-4">
                         <span class="text-xs font-bold uppercase tracking-wider text-[#f5b700]">Automação Suprema</span>
-                        <h5 class="text-xl sm:text-2xl font-black text-white">Inteligência Suprema</h5>
+                        <h4 class="text-xl sm:text-2xl font-black text-white">Inteligência Suprema</h4>
                         <p class="text-xs text-slate-300 leading-relaxed">Agenda + WhatsApp + Robô de IA completo que atende e agenda sozinho 24h.</p>
 
                         <div class="pt-3 pb-2 border-t border-slate-800/80">
@@ -1493,7 +1504,7 @@
                         <!-- Topo com Altura Equalizada para Alinhamento Perfeito -->
                         <div class="min-h-[120px] sm:min-h-[128px] flex flex-col justify-start space-y-2">
                           <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Início Rápido</span>
-                          <h5 class="text-xl font-bold text-white group-hover:text-slate-200 transition-colors">Landing Page Express</h5>
+                          <h4 class="text-xl font-bold text-white group-hover:text-slate-200 transition-colors">Landing Page Express</h4>
                           <p class="text-xs text-slate-400 leading-relaxed">Página única de alta conversão focada em transformar visitantes em contatos imediatos no WhatsApp.</p>
                         </div>
 
@@ -1532,7 +1543,7 @@
                         <!-- Topo com Altura Equalizada para Alinhamento Perfeito -->
                         <div class="min-h-[120px] sm:min-h-[128px] flex flex-col justify-start space-y-2">
                           <span class="text-xs font-bold uppercase tracking-wider text-[#00e5ff]">Autoridade Corporativa</span>
-                          <h5 class="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors">Landing Page Comercial</h5>
+                          <h4 class="text-xl font-bold text-white group-hover:text-[#00e5ff] transition-colors">Landing Page Comercial</h4>
                           <p class="text-xs text-slate-400 leading-relaxed">Estrutura comercial completa para apresentar serviços, gerar autoridade e atrair clientes de maior valor.</p>
                         </div>
 
@@ -1575,7 +1586,7 @@
                         <!-- Topo com Altura Equalizada para Alinhamento Perfeito -->
                         <div class="min-h-[120px] sm:min-h-[128px] flex flex-col justify-start space-y-2">
                           <span class="text-xs font-bold uppercase tracking-wider text-[#f5b700]">Máxima Velocidade &amp; Busca Local</span>
-                          <h5 class="text-xl font-extrabold text-white">Landing Page VIP</h5>
+                          <h4 class="text-xl font-extrabold text-white">Landing Page VIP</h4>
                           <p class="text-xs text-slate-300 leading-relaxed">Página comercial de alta conversão com SEO avançado para colocar sua empresa no topo do Google.</p>
                         </div>
 
@@ -2417,13 +2428,13 @@
                   <div class="relative flex-shrink-0">
                     <img class="w-11 h-11 rounded-full object-cover ring-2 ring-[#f5b700]/40" 
                          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" 
-                         alt="Marcos Silveira" />
+                         alt="Marcos Silveira" width="44" height="44" loading="lazy" decoding="async" />
                     <div class="absolute -bottom-1 -right-1 bg-emerald-500 rounded-full p-0.5 text-slate-950">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                     </div>
                   </div>
                   <div class="min-w-0 flex-1">
-                    <h4 class="text-sm font-bold text-white leading-tight">Marcos Silveira</h4>
+                    <h3 class="text-sm font-bold text-white leading-tight">Marcos Silveira</h3>
                     <p class="text-xs text-slate-400 leading-tight mt-0.5">Mercado &amp; Mercearia São José</p>
                   </div>
                 </div>
@@ -2463,13 +2474,13 @@
                   <div class="relative flex-shrink-0">
                     <img class="w-11 h-11 rounded-full object-cover ring-2 ring-amber-500/40" 
                          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" 
-                         alt="Carla Mendonça" />
+                         alt="Carla Mendonça" width="44" height="44" loading="lazy" decoding="async" />
                     <div class="absolute -bottom-1 -right-1 bg-emerald-500 rounded-full p-0.5 text-slate-950">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                     </div>
                   </div>
                   <div class="min-w-0 flex-1">
-                    <h4 class="text-sm font-bold text-white leading-tight">Carla Mendonça</h4>
+                    <h3 class="text-sm font-bold text-white leading-tight">Carla Mendonça</h3>
                     <p class="text-xs text-slate-400 leading-tight mt-0.5">Bistrô Estação Gourmet</p>
                   </div>
                 </div>
@@ -2509,13 +2520,13 @@
                   <div class="relative flex-shrink-0">
                     <img class="w-11 h-11 rounded-full object-cover ring-2 ring-emerald-500/40" 
                          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80" 
-                         alt="Dra. Juliana Vieira" />
+                         alt="Dra. Juliana Vieira" width="44" height="44" loading="lazy" decoding="async" />
                     <div class="absolute -bottom-1 -right-1 bg-emerald-500 rounded-full p-0.5 text-slate-950">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                     </div>
                   </div>
                   <div class="min-w-0 flex-1">
-                    <h4 class="text-sm font-bold text-white leading-tight">Dra. Juliana Vieira</h4>
+                    <h3 class="text-sm font-bold text-white leading-tight">Dra. Juliana Vieira</h3>
                     <p class="text-xs text-slate-400 leading-tight mt-0.5">Clínica Vitalità Saúde</p>
                   </div>
                 </div>
@@ -2555,13 +2566,13 @@
                   <div class="relative flex-shrink-0">
                     <img class="w-11 h-11 rounded-full object-cover ring-2 ring-[#00e5ff]/40" 
                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
-                         alt="Rodrigo Pinheiro" />
+                         alt="Rodrigo Pinheiro" width="44" height="44" loading="lazy" decoding="async" />
                     <div class="absolute -bottom-1 -right-1 bg-emerald-500 rounded-full p-0.5 text-slate-950">
                       <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                     </div>
                   </div>
                   <div class="min-w-0 flex-1">
-                    <h4 class="text-sm font-bold text-white leading-tight">Rodrigo Pinheiro</h4>
+                    <h3 class="text-sm font-bold text-white leading-tight">Rodrigo Pinheiro</h3>
                     <p class="text-xs text-slate-400 leading-tight mt-0.5">RP Imports &amp; Acessórios</p>
                   </div>
                 </div>
