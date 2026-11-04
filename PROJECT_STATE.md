@@ -1,20 +1,29 @@
 # PROJECT_STATE.md — LS Tecnologia & Gestão
 
 ## 📌 Onde parámos
-- **Simetria Visual Absoluta no Simulador de Investimento**:
-  - Removida a pílula *"Opcional"* do cabeçalho da Etapa 2 em [index.html](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html) para espelhar perfeitamente o título da Etapa 1.
-  - Aplicado espaçamento vertical `mt-4` (16px) no grid de módulos da Etapa 2, idêntico à cadência e ritmo vertical dos cards da Etapa 1.
-  - Bloqueio de fechamento no Desktop (≥ 1024px) e comportamento sanfonado interativo no Mobile mantidos 100% íntegros.
-- **Configuração do Domínio Oficial Definitivo (`https://lstecnogestao.com.br/`) Concluída**:
-  - Tags canônicas, Open Graph e Schema.org no [index.html](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html) apontam para `https://lstecnogestao.com.br/`.
-  - Arquivos de rastreamento e indexação atualizados: `robots.txt`, `sitemap.xml`, `llms.txt`, `humans.txt` e `public/.well-known/security.txt`.
-  - Ecossistema de marca unificado com o Instagram oficial `@ls_tecnogestao`.
+- **Lançamento Oficial v2.0 — Deploy em Produção (Cloudflare Pages)**:
+  - **4º Pilar Tecnológico (LS Digital Web)**:
+    - Integrado no Hero da página inicial com métrica compacta e harmônica.
+    - Nova 4ª aba interativa na Seção 2 com vitrine 3D dedicada (`/assets/ls-digital-showcase.webp`).
+    - 3 planos de contratação (Landing Page Express a partir de R$ 600, Comercial Sob Medida e VIP Sob Consulta com foco em SSL, segurança e SEO).
+    - Rastreamento dinâmico de conversão no WhatsApp (`lsDigitalExpress`, `lsDigitalComercial`, `lsDigitalVIP`).
+  - **Homogeneização Semiótica & UX Mobile**:
+    - Padronização do ícone canônico Lucide Globe no Hero e na 4ª aba (`index.html`).
+    - Rótulo mobile da 4ª aba otimizado para `"Web"` (`.sm:hidden`), garantindo encaixe perfeito em 360px-390px.
+    - Desocultado o badge campeão "★ Mais Escolhido" no Venda+ com padding vertical de segurança e z-index elevado.
+    - Indicadores de orientação de gesto mobile ("Deslize para comparar planos") reposicionados organicamente abaixo das grades em TiAgenda e LS Digital.
+  - **Equalização da Cadência Vertical Responsiva**:
+    - Espaçamento fluido calibrado em todas as dobras (`#sistemas`, `#combo-mei`, `#simulador`, `#depoimentos`, `#faq` e `#cta-final`), eliminando vazios e garantindo continuidade rítmica (48px mobile, 64px tablet, 96px desktop).
+  - **Purga de Código Morto (Zero-Bloat Protocol)**:
+    - Eliminadas chaves zumbis de mensagens em `src/scripts/conversion.js` e queries legadas em `src/scripts/cursor-field.js`, reduzindo o bundle JS em produção.
+  - **Deploy Cloudflare Pages**:
+    - Commit semântico oficial e sincronização com `origin/main`.
 
 ## ⚙️ Estado atual
-- **Compilação de Produção (`npm.cmd run build`):** 100% íntegra (0 erros, Vite 6.4.4).
-- **Repositório GitHub:** `origin/main` atualizado com o commit de simetria do simulador.
-- **Deploy:** Pipeline de deploy automatizado via Cloudflare Pages / Vercel.
+- **Ambiente de Produção:** Publicado e distribuído globalmente pela Cloudflare Pages em **`https://lstecnogestao.com.br`**.
+- **Compilação de Produção (`npm run build`):** 100% íntegra (0 erros, Vite v6.4.4).
+- **Repositório GitHub:** Sincronizado com a branch `main`.
 
 ## 🎯 Próximos passos imediatos
-- Verificação visual final da simetria no site em produção (`https://lstecnogestao.com.br/`).
-- Monitoramento de conversão e ergonomia em dispositivos móveis.
+- Monitorar a propagação na Edge CDN da Cloudflare Pages (~60 a 90 segundos).
+- Realizar validação final em ambiente de produção acessando `https://lstecnogestao.com.br` via smartphone e desktop.

@@ -25,6 +25,10 @@ export const CONFIG = {
     tiagendaIA: 'Olá! Vim pelo site e gostaria de ativar o TiAgenda Inteligência Suprema (R$ 210/mês) com IA.',
     comboMei: 'Olá! Vim pelo site e quero garantir o Combo MEI de Sucesso com desconto.',
     geral: 'Olá! Vim pelo site e gostaria de agendar uma demonstração gratuita das soluções da LS Tecnologia.',
+    lsDigital: 'Olá! Vim pelo site da LS Tecnologia e gostaria de solicitar um orçamento para criação de Landing Page / Presença Web.',
+    lsDigitalExpress: 'Olá! Vim pelo site da LS Tecnologia e gostaria de um orçamento para a Landing Page Express (a partir de R$ 600).',
+    lsDigitalComercial: 'Olá! Vim pelo site da LS Tecnologia e gostaria de um orçamento para a Landing Page Comercial Completa.',
+    lsDigitalVIP: 'Olá! Vim pelo site da LS Tecnologia e gostaria de saber mais sobre a Landing Page VIP com SEO para o Google.'
   }
 };
 
@@ -37,7 +41,8 @@ function setupMobileSystemTabs() {
     'venda-mais': document.getElementById('venda-plus') || document.getElementById('venda-mais'),
     'venda-plus': document.getElementById('venda-plus') || document.getElementById('venda-mais'),
     'gerente-virtual': document.getElementById('gerente-virtual'),
-    'tiagenda': document.getElementById('tiagenda')
+    'tiagenda': document.getElementById('tiagenda'),
+    'ls-digital': document.getElementById('ls-digital')
   };
 
   if (tabBtns.length === 0 || (!systemCards['venda-mais'] && !systemCards['venda-plus'])) return;
@@ -78,7 +83,7 @@ function setupMobileSystemTabs() {
     const rawHref = anchor.getAttribute('href');
     if (!rawHref) return;
     const target = rawHref.replace('#', '');
-    if (['venda-mais', 'venda-plus', 'gerente-virtual', 'tiagenda'].includes(target)) {
+    if (['venda-mais', 'venda-plus', 'gerente-virtual', 'tiagenda', 'ls-digital'].includes(target)) {
       anchor.addEventListener('click', () => {
         switchTab(target);
       });
@@ -87,7 +92,7 @@ function setupMobileSystemTabs() {
 
   if (window.location.hash) {
     const currentHash = window.location.hash.replace('#', '');
-    if (['venda-mais', 'venda-plus', 'gerente-virtual', 'tiagenda'].includes(currentHash)) {
+    if (['venda-mais', 'venda-plus', 'gerente-virtual', 'tiagenda', 'ls-digital'].includes(currentHash)) {
       switchTab(currentHash);
     } else {
       switchTab('venda-mais');

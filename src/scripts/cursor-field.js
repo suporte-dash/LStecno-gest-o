@@ -449,7 +449,7 @@ function hexToRgb(hex) {
 export function initHeroCursorField() {
   const canvas = document.getElementById("hero-cursor-canvas");
   const host = document.getElementById("hero-cursor-field-host");
-  const heroSection = document.getElementById("hero") || document.getElementById("hero-section");
+  const heroSection = document.getElementById("hero");
 
   if (!canvas || !host) return;
 
