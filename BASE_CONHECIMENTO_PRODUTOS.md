@@ -48,7 +48,7 @@
 #### Tabela de Planos do Gerente Virtual:
 | Plano | Valor Mensal | Recursos Principais |
 | :--- | :--- | :--- |
-| **Gerente Virtual Completo** | **R$ 185/mês** | Todos os dashboards analíticos, relatórios diários de WhatsApp, DRE em tempo real e controle multi-empresa unificado. |
+| **Gerente Virtual Completo** | **R$ 259,90/mês** | Todos os dashboards analíticos, relatórios diários de WhatsApp, DRE em tempo real e controle multi-empresa unificado. |
 
 #### Módulos Individuais do Gerente Virtual:
 | Módulo | Valor Adicional | Descrição |

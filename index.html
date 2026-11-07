@@ -1008,7 +1008,7 @@
                           <div class="text-left sm:text-right shrink-0">
                             <span class="text-xs text-slate-400 block">Mensalidade</span>
                             <div class="flex items-baseline gap-1">
-                              <span class="text-3xl sm:text-4xl font-black text-[#f5b700]">R$ 185</span>
+                              <span class="text-3xl sm:text-4xl font-black text-[#f5b700]">R$ 259,90</span>
                               <span class="text-slate-400 text-xs">/mês</span>
                             </div>
                           </div>
@@ -1027,9 +1027,10 @@
 
                       <!-- Botão Dourado de Conversão na Base (mt-auto) -->
                       <div class="pt-4 border-t border-slate-800/80 mt-auto">
-                        <a href="https://wa.me/5591982102720?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20ativar%20o%20Gerente%20Virtual%20Completo%20(R%24%20185%2Fm%C3%AAs)." 
+                        <a href="https://wa.me/5591982102720?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20ativar%20o%20Gerente%20Virtual%20Completo%20(R%24%20259%2C90%2Fm%C3%AAs)." 
                            target="_blank" 
-                           rel="noopener noreferrer" 
+                           rel="noopener noreferrer"
+                           data-whatsapp-intent="gerenteCompleto" 
                            class="btn-cyber-gold btn-shimmer w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-extrabold text-xs min-h-[44px]">
                           <span>Contratar Gerente Virtual Completo</span>
                           <span class="text-xs">→</span>
@@ -1982,21 +1983,21 @@
                   <!-- Grid de Checkboxes Estilizados (Mesmo espaçamento mt-4 / 16px exato da Etapa 1) -->
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-4">
                   
-                  <!-- Módulo 1: PDV Móvel (Default selecionado para exemplo) -->
-                  <label class="module-card flex items-center justify-between p-4 rounded-xl bg-[#0f172a]/90 border border-[#00e5ff] shadow-[0_0_15px_rgba(0,229,255,0.2)] cursor-pointer transition-all duration-300 min-h-[56px]">
+                  <!-- Módulo 1: PDV Móvel -->
+                  <label class="module-card flex items-center justify-between p-4 rounded-xl bg-[#0f172a]/70 border border-slate-800 hover:border-slate-700 cursor-pointer transition-all duration-300 min-h-[56px]">
                     <div class="flex items-center gap-3 min-w-0 pr-2">
-                      <div class="w-9 h-9 rounded-lg bg-[#00e5ff]/15 text-[#00e5ff] flex items-center justify-center shrink-0">
+                      <div class="w-9 h-9 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                       </div>
                       <div>
                         <div class="text-sm font-bold text-white block">PDV Móvel</div>
-                        <div class="text-xs font-semibold text-[#00e5ff]">+R$ 40/mês</div>
+                        <div class="text-xs font-semibold text-slate-400">+R$ 40/mês</div>
                       </div>
                     </div>
-                    <input type="checkbox" name="module" value="pdv_movel" data-name="PDV Móvel" data-price="40" class="sr-only module-checkbox" checked />
+                    <input type="checkbox" name="module" value="pdv_movel" data-name="PDV Móvel" data-price="40" class="sr-only module-checkbox" />
                     <!-- Toggle Switch Visual -->
-                    <div class="w-12 h-6 bg-[#00e5ff] rounded-full p-1 transition-colors duration-300 relative shrink-0 switch-bg">
-                      <div class="w-4 h-4 bg-slate-950 rounded-full transition-transform duration-300 translate-x-6 switch-dot"></div>
+                    <div class="w-12 h-6 bg-slate-800 rounded-full p-1 transition-colors duration-300 relative shrink-0 switch-bg">
+                      <div class="w-4 h-4 bg-slate-400 rounded-full transition-transform duration-300 translate-x-0 switch-dot"></div>
                     </div>
                   </label>
 
@@ -2118,13 +2119,10 @@
                   <div class="pt-2 border-t border-slate-800/50 space-y-2">
                     <div class="flex justify-between items-center text-xs text-slate-400">
                       <span>Módulos Adicionais:</span>
-                      <span class="text-[#00e5ff] font-semibold" id="summary-module-count">1 módulo ativo</span>
+                      <span class="text-slate-400 font-semibold" id="summary-module-count">0 módulos</span>
                     </div>
                     <div id="summary-active-modules" class="flex flex-wrap gap-1.5 pt-1">
-                      <!-- Injetado dinamicamente via JS -->
-                      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#00e5ff]/10 border border-[#00e5ff]/30 text-[#00e5ff] text-[11px] font-medium">
-                        ✓ PDV Móvel (+R$ 40)
-                      </span>
+                      <span class="text-slate-500 text-[11px] italic">Nenhum módulo adicional selecionado</span>
                     </div>
                   </div>
                 </div>

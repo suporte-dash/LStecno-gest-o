@@ -20,7 +20,7 @@ export const CONFIG = {
     vendaSimples: 'Olá! Vim pelo site e gostaria de ativar o Plano Venda+ Simples (R$ 169/mês) com NFC-e.',
     gerente: 'Olá! Vim pelo site e gostaria de ativar o Gerente Virtual com IA.',
     gerenteVirtual: 'Olá! Vim pelo site e gostaria de ativar o Gerente Virtual com IA.',
-    gerenteCompleto: 'Olá! Vim pelo site e gostaria de ativar o Gerente Virtual Completo (R$ 185/mês).',
+    gerenteCompleto: 'Olá! Vim pelo site e gostaria de ativar o Gerente Virtual Completo (R$ 259,90/mês).',
     tiagenda: 'Olá! Vim pelo site e gostaria de experimentar o TiAgenda com IA.',
     tiagendaIA: 'Olá! Vim pelo site e gostaria de ativar o TiAgenda Inteligência Suprema (R$ 210/mês) com IA.',
     comboMei: 'Olá! Vim pelo site e quero garantir o Combo MEI de Sucesso com desconto.',

@@ -1,27 +1,23 @@
 # PROJECT_STATE.md — LS Tecnologia & Gestão
 
 ## 📌 Onde parámos
-- **Calibração Cirúrgica de Core Web Vitals, Estrelas Google (Rich Results) & Acessibilidade 100 [DEPLOY PRODUÇÃO]**:
-  - **Preload Crítico do Lobo Alfa 3D (LCP)**:
-    - Adicionado `<link rel="preload" as="image" href="/assets/logo-hero-master.webp" type="image/webp" fetchpriority="high" />` no `<head>`, antecipando a renderização do elemento principal LCP e reduzindo a latência móvel.
-  - **Schema JSON-LD com `aggregateRating` (Google Stars)**:
-    - Injetada a avaliação verificada (nota 4.9 baseada em 248 avaliações) na entidade `SoftwareApplication` para exibição de estrelas douradas nos resultados de busca orgânica do Google.
-  - **Unificação de Favicon & Otimização de Imagens de Terceiros**:
-    - Removido query param `?v=2` das tags de favicon para prevenir downloads redundantes de 70 KB.
-    - Injetados atributos explícitos `width="44" height="44" loading="lazy" decoding="async"` nos 4 avatares do Unsplash na Seção de Depoimentos, eliminando bloqueio de renderização e garantindo CLS 0.
-  - **Hierarquia Semântica Rigorosa (Acessibilidade 100)**:
-    - Clientes da Seção de Depoimentos elevados de `H4` para `H3` (`<h3 class="text-sm font-bold text-white leading-tight">`).
-    - Títulos dos planos comerciais da Seção 2 (#sistemas) ajustados de `H5` para `H4` (`<h4 class="text-xl font-bold text-white...">`).
-    - Submódulos da Seção 2 ajustados de `H6` para `H5` (`<h5 class="text-xs sm:text-sm font-semibold text-white...">`).
-    - Preservadas integralmente todas as classes utilitárias do Tailwind CSS, garantindo **ZERO alteração visual**.
+- **Deploy em Produção: Ajuste de Preço do Gerente Virtual & Desmarcação Padrão do PDV Móvel no Simulador (Cloudflare Pages)**:
+  - **Preço do Gerente Virtual Completo Atualizado**:
+    - Ajustado de `R$ 185` para **`R$ 259,90/mês`** no card principal da Seção 2 ([`index.html#L1011`](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html#L1011)).
+    - Atualizado o link de WhatsApp no botão com mensagem parametrizada ([`index.html#L1030`](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html#L1030)) e adicionado atributo `data-whatsapp-intent="gerenteCompleto"`.
+    - Atualizado o dicionário de mensagens de conversão em [`src/scripts/conversion.js#L23`](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/src/scripts/conversion.js#L23) para `R$ 259,90/mês`.
+    - Sincronizada a tabela oficial de produtos em [`BASE_CONHECIMENTO_PRODUTOS.md#L51`](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/BASE_CONHECIMENTO_PRODUTOS.md#L51).
+  - **Simulador de Pacotes (Etapa 2 - Módulos Adicionais)**:
+    - O módulo **PDV Móvel** ([`index.html#L1985-L2001`](file:///c:/Users/NOC%2001/Desktop/PROJETOS%20ANTIGRAVITY/PAGINA%20LS%20VENDAS/index.html#L1985-L2001)) agora inicia **desmarcado por padrão** (removido `checked`, switch desativado `bg-slate-800` e card em repouso), alinhando com a regra de que todos os módulos são opcionais.
+    - O painel de resumo inicial da proposta agora reflete `0 módulos` e `Nenhum módulo adicional selecionado`, mantendo o total inicial limpo no valor exato do plano base.
   - **Deploy Cloudflare Pages**:
-    - Build testado com sucesso (código 0) e sincronizado com `origin/main`.
+    - Build compilado com sucesso (código 0, 559ms) e sincronizado com `origin/main`.
 
 ## ⚙️ Estado atual
 - **Ambiente de Produção:** Publicado e distribuído globalmente pela Cloudflare Pages em **`https://lstecnogestao.com.br`**.
-- **Compilação de Produção (`npm run build`):** 100% íntegra (0 erros, Vite v6.4.4 concluído em 392ms).
+- **Compilação de Produção (`npm run build`):** 100% íntegra (0 erros, Vite v6.4.4).
 - **Repositório GitHub:** Sincronizado com a branch `main`.
 
 ## 🎯 Próximos passos imediatos
 - Aguardar 60 a 90 segundos para a propagação da Edge CDN da Cloudflare Pages.
-- Re-executar o Google PageSpeed Insights e o Rich Results Test para validar a conquista dos 100 em Acessibilidade/SEO e ativação das Rich Snippets com estrelas.
+- Acessar `https://lstecnogestao.com.br` para conferir a atualização do Gerente Virtual (`R$ 259,90`) e o Simulador com toggles desmarcados em produção.
